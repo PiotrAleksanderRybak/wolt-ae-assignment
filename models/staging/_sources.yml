@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: wolt_raw
+    description: Raw data loaded from the CSV files provided with the assignment.
+    database: WOLT_TASK
+    schema: RAW
+
+    tables:
+      - name: item_logs
+        identifier: ITEM_LOGS
+        description: Raw item-level event logs.
+
+      - name: promos
+        identifier: PROMOS
+        description: Raw promotional campaign data.
+
+      - name: purchase_logs
+        identifier: PURCHASE_LOGS
+        description: Raw purchase event logs.

@@ -1,0 +1,114 @@
+version: 2
+
+models:
+  - name: stg_item_logs
+    description: >
+      Cleaned and deduplicated history of item changes. Each row represents
+      one logged version of an item.
+
+    columns:
+      - name: log_item_id
+        description: Unique identifier of an item log version.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: item_key
+        description: Business identifier of the item.
+        data_tests:
+          - not_null
+
+      - name: time_log_created_utc
+        description: UTC timestamp when this item version was logged.
+        data_tests:
+          - not_null
+
+      - name: item_name
+        description: English item name where available, otherwise German.
+
+      - name: item_category
+        description: Category assigned to the item.
+
+      - name: product_base_price
+        description: Gross product price in EUR, including VAT.
+
+      - name: currency
+        description: Currency extracted from the item payload.
+
+      - name: vat_rate_percentage
+        description: VAT rate expressed as a percentage.
+
+      - name: payload_json
+        description: Parsed version of the original JSON payload.
+        data_tests:
+          - not_null
+
+  - name: stg_promos
+    description: Cleaned promotional periods and discount percentages.
+
+    columns:
+      - name: item_key
+        description: Identifier of the promoted item.
+        data_tests:
+          - not_null
+
+      - name: promo_start_date
+        description: First calendar date on which the promotion is active.
+        data_tests:
+          - not_null
+
+      - name: promo_end_date
+        description: Exclusive end date of the promotion.
+        data_tests:
+          - not_null
+
+      - name: promo_type
+        description: Type of promotion.
+        data_tests:
+          - not_null
+
+      - name: discount_percentage
+        description: Discount applied to the item price, expressed as a percentage.
+        data_tests:
+          - not_null
+
+  - name: stg_purchase_logs
+    description: >
+      Cleaned purchase-level data. Each row represents one completed and
+      delivered purchase.
+
+    columns:
+      - name: purchase_key
+        description: Unique identifier of the purchase.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_key
+        description: Identifier of the customer.
+        data_tests:
+          - not_null
+
+      - name: time_order_received_utc
+        description: UTC timestamp when the order was received.
+        data_tests:
+          - not_null
+
+      - name: delivery_distance_line_meters
+        description: Straight-line delivery distance in meters.
+
+      - name: wolt_service_fee
+        description: Service fee charged for the purchase.
+
+      - name: courier_base_fee
+        description: Base courier cost for the purchase.
+
+      - name: total_basket_value
+        description: Final basket value after promotional discounts.
+        data_tests:
+          - not_null
+
+      - name: item_basket_json
+        description: Parsed JSON array containing purchased items and quantities.
+        data_tests:
+          - not_null

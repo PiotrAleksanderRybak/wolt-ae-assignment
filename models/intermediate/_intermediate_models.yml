@@ -1,0 +1,143 @@
+version: 2
+
+models:
+  - name: int_purchase_items
+    description: >
+      Purchase baskets flattened to one row per purchase and item.
+
+    columns:
+      - name: purchase_item_key
+        description: Unique identifier of a purchase and item combination.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: purchase_key
+        description: Identifier of the parent purchase.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_purchase_logs')
+                field: purchase_key
+
+      - name: item_key
+        description: Identifier of the purchased item.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_item_versions')
+                field: item_key
+
+      - name: item_count
+        description: Number of units of the item in the purchase.
+        data_tests:
+          - not_null
+
+  - name: int_item_versions
+    description: >
+      SCD Type 2 history of item attributes and prices.
+
+    columns:
+      - name: item_version_key
+        description: Unique identifier of an item version.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: item_key
+        description: Business identifier of the item.
+        data_tests:
+          - not_null
+
+      - name: valid_from_utc
+        description: Beginning of the item version validity period.
+        data_tests:
+          - not_null
+
+      - name: is_current
+        description: Indicates the latest available version of an item.
+        data_tests:
+          - not_null
+
+      - name: currency
+        description: Currency of the item price.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - EUR
+
+  - name: int_purchase_items_enriched
+    description: >
+      Purchase items enriched with the historically correct item version
+      and applicable promotion.
+
+    columns:
+      - name: purchase_item_key
+        description: Unique identifier of a purchase and item combination.
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('int_purchase_items')
+                field: purchase_item_key
+
+      - name: item_version_key
+        description: Item version applicable at the time of purchase.
+        data_tests:
+          - not_null
+
+      - name: unit_base_price
+        description: >
+          Gross unit price applicable at the time of purchase. May be null
+          for 15 source items for which no price is available in any item version.
+
+      - name: item_count
+        description: Number of purchased units.
+        data_tests:
+          - not_null
+
+  - name: int_purchases_classified
+    description: >
+      Purchase-level intermediate model that preserves all source purchases
+      and adds diagnostic flags for rapid repeated purchases with otherwise
+      identical purchase characteristics.
+
+    columns:
+      - name: purchase_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_key
+        data_tests:
+          - not_null
+
+      - name: time_order_received_utc
+        data_tests:
+          - not_null
+
+      - name: is_in_rapid_repeat_group
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: is_rapid_repeat_candidate
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: rapid_repeat_sequence_number
+        data_tests:
+          - not_null
+
+      - name: rapid_repeat_group_size
+        data_tests:
+          - not_null

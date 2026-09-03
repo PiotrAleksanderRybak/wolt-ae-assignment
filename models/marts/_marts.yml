@@ -1,0 +1,147 @@
+version: 2
+
+models:
+  - name: fct_purchases
+    description: >
+      Purchase-level fact table. One row represents one completed purchase.
+
+    columns:
+      - name: purchase_key
+        description: Unique identifier of a purchase.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_key
+        description: Identifier of the customer who made the purchase.
+        data_tests:
+          - not_null
+
+      - name: time_order_received_utc
+        data_tests:
+          - not_null
+
+      - name: order_date
+        data_tests:
+          - not_null
+
+      - name: merchandise_revenue
+        data_tests:
+          - not_null
+
+      - name: service_fee_revenue
+        data_tests:
+          - not_null
+
+      - name: gross_order_revenue
+        data_tests:
+          - not_null
+
+      - name: courier_cost
+        data_tests:
+          - not_null
+
+      - name: is_in_rapid_repeat_group
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: is_rapid_repeat_candidate
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: rapid_repeat_sequence_number
+        data_tests:
+          - not_null
+
+      - name: rapid_repeat_group_size
+        data_tests:
+          - not_null
+
+
+  - name: fct_purchase_items
+    description: >
+      Purchase-item-level fact table. One row represents one item position
+      within a purchase.
+
+    columns:
+      - name: purchase_item_key
+        description: Unique identifier of a purchase item.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: purchase_key
+        description: Identifier of the purchase containing the item.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_purchases')
+                field: purchase_key
+
+      - name: customer_key
+        data_tests:
+          - not_null
+
+      - name: time_order_received_utc
+        data_tests:
+          - not_null
+
+      - name: item_key
+        data_tests:
+          - not_null
+
+      - name: item_version_key
+        data_tests:
+          - not_null
+
+      - name: item_name
+        data_tests:
+          - not_null
+
+      - name: item_count
+        data_tests:
+          - not_null
+
+      - name: currency
+        data_tests:
+          - not_null
+
+      - name: is_on_promotion
+        data_tests:
+          - not_null
+
+      - name: has_price
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: is_in_rapid_repeat_group
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: is_rapid_repeat_candidate
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: rapid_repeat_sequence_number
+        data_tests:
+          - not_null
+
+      - name: rapid_repeat_group_size
+        data_tests:
+          - not_null
