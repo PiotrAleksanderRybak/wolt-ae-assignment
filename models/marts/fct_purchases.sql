@@ -15,6 +15,12 @@ final as (
         cast(time_order_received_utc as date) as order_date,
         date_trunc('month', time_order_received_utc)::date as order_month,
 
+        customer_purchase_number_in_period,
+        previous_customer_purchase_time_utc,
+        is_first_observed_purchase_in_period,
+        is_repeat_purchase_in_period,
+        days_since_previous_purchase,
+
         delivery_distance_line_meters,
         delivery_distance_line_meters / 1000.0
             as delivery_distance_line_km,

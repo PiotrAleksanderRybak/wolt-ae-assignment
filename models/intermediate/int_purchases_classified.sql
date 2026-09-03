@@ -6,6 +6,9 @@ with purchases as (
 
     from {{ ref('stg_purchase_logs') }}
 
+    where time_order_received_utc >= '2023-01-01'::timestamp_ntz
+      and time_order_received_utc <  '2024-01-01'::timestamp_ntz
+
 ),
 
 ordered_purchases as (
@@ -120,6 +123,50 @@ sequenced as (
 
     from with_groups
 
+),
+
+with_customer_lifecycle as (
+
+    select
+        *,
+
+        row_number() over (
+            partition by customer_key
+            order by
+                time_order_received_utc,
+                purchase_key
+        ) as customer_purchase_number_in_period,
+
+        lag(time_order_received_utc) over (
+            partition by customer_key
+            order by
+                time_order_received_utc,
+                purchase_key
+        ) as previous_customer_purchase_time_utc
+
+    from sequenced
+
+),
+
+final as (
+
+    select
+        *,
+
+        customer_purchase_number_in_period = 1
+            as is_first_observed_purchase_in_period,
+
+        customer_purchase_number_in_period > 1
+            as is_repeat_purchase_in_period,
+
+        datediff(
+            'day',
+            previous_customer_purchase_time_utc,
+            time_order_received_utc
+        ) as days_since_previous_purchase
+
+    from with_customer_lifecycle
+
 )
 
 select
@@ -145,6 +192,12 @@ select
 
     rapid_repeat_sequence_number > 1
         and seconds_since_matching_purchase <= 300
-        as is_rapid_repeat_candidate
+        as is_rapid_repeat_candidate,
 
-from sequenced
+    customer_purchase_number_in_period,
+    previous_customer_purchase_time_utc,
+    is_first_observed_purchase_in_period,
+    is_repeat_purchase_in_period,
+    days_since_previous_purchase
+
+from final

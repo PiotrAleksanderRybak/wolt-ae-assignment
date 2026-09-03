@@ -9,6 +9,13 @@ purchase_classification as (
 
     select
         purchase_key,
+
+        customer_purchase_number_in_period,
+        previous_customer_purchase_time_utc,
+        is_first_observed_purchase_in_period,
+        is_repeat_purchase_in_period,
+        days_since_previous_purchase,
+
         is_in_rapid_repeat_group,
         is_rapid_repeat_candidate,
         seconds_since_matching_purchase,
@@ -29,6 +36,12 @@ final as (
         pi.time_order_received_utc,
         cast(pi.time_order_received_utc as date) as order_date,
         date_trunc('month', pi.time_order_received_utc)::date as order_month,
+
+        pc.customer_purchase_number_in_period,
+        pc.previous_customer_purchase_time_utc,
+        pc.is_first_observed_purchase_in_period,
+        pc.is_repeat_purchase_in_period,
+        pc.days_since_previous_purchase,
 
         pi.basket_position,
 
@@ -64,8 +77,8 @@ final as (
 
     from purchase_items pi
 
-    left join purchase_classification pc
-        on pi.purchase_key = pc.purchase_key
+    inner join purchase_classification pc
+    on pi.purchase_key = pc.purchase_key
 
 )
 

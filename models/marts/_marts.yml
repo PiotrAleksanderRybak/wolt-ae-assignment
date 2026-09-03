@@ -1,13 +1,18 @@
 version: 2
 
 models:
+
   - name: fct_purchases
     description: >
-      Purchase-level fact table. One row represents one completed purchase.
+      One row per completed purchase in the 2023 analysis period.
+      The model contains order-level financial metrics, customer purchase
+      lifecycle fields, delivery information and rapid-repeat diagnostics.
+      Rapid-repeat records are preserved and flagged rather than removed.
 
     columns:
+
       - name: purchase_key
-        description: Unique identifier of a purchase.
+        description: Unique purchase identifier.
         data_tests:
           - not_null
           - unique
@@ -18,30 +23,111 @@ models:
           - not_null
 
       - name: time_order_received_utc
+        description: UTC timestamp when the order was received.
         data_tests:
           - not_null
 
       - name: order_date
+        description: Calendar date of the purchase.
+        data_tests:
+          - not_null
+
+      - name: order_month
+        description: First day of the calendar month in which the purchase occurred.
+        data_tests:
+          - not_null
+
+      - name: customer_purchase_number_in_period
+        description: >
+          Sequential purchase number for the customer within the 2023
+          analysis period, ordered by purchase timestamp.
+        data_tests:
+          - not_null
+
+      - name: previous_customer_purchase_time_utc
+        description: >
+          Timestamp of the customer's previous observed purchase within
+          the analysis period. Null for the customer's first observed purchase.
+
+      - name: is_first_observed_purchase_in_period
+        description: >
+          True when this is the customer's first observed purchase within
+          the 2023 analysis period. This does not necessarily represent the
+          customer's first-ever purchase outside the available analysis period.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: is_repeat_purchase_in_period
+        description: >
+          True when the customer had an earlier observed purchase within
+          the 2023 analysis period.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: days_since_previous_purchase
+        description: >
+          Number of calendar days since the customer's previous observed
+          purchase. Null for the customer's first observed purchase.
+
+      - name: delivery_distance_line_meters
+        description: Straight-line delivery distance in meters.
+        data_tests:
+          - not_null
+
+      - name: delivery_distance_line_km
+        description: Straight-line delivery distance converted to kilometers.
         data_tests:
           - not_null
 
       - name: merchandise_revenue
+        description: Total value paid for products in the basket.
         data_tests:
           - not_null
 
       - name: service_fee_revenue
+        description: Wolt service fee charged for the purchase.
         data_tests:
           - not_null
 
       - name: gross_order_revenue
+        description: >
+          Merchandise revenue plus Wolt service fee revenue.
         data_tests:
           - not_null
 
       - name: courier_cost
+        description: Base courier fee associated with the purchase.
         data_tests:
           - not_null
 
+      - name: revenue_less_courier_cost
+        description: >
+          Merchandise revenue plus service fee revenue minus courier cost.
+        data_tests:
+          - not_null
+
+      - name: service_fee_to_basket_ratio
+        description: >
+          Service fee divided by merchandise revenue. Null when basket
+          value is zero.
+
+      - name: courier_cost_to_basket_ratio
+        description: >
+          Courier cost divided by merchandise revenue. Null when basket
+          value is zero.
+
       - name: is_in_rapid_repeat_group
+        description: >
+          True when the purchase belongs to a group of closely spaced
+          purchases with matching customer, basket and order attributes.
+          This is a diagnostic flag and does not classify the purchase
+          as a confirmed duplicate.
         data_tests:
           - not_null
           - accepted_values:
@@ -49,35 +135,51 @@ models:
                 values: [true, false]
 
       - name: is_rapid_repeat_candidate
+        description: >
+          True for a purchase following another matching purchase within
+          the five-minute anomaly-detection threshold. Purchases are not
+          removed from the analytical facts.
         data_tests:
           - not_null
           - accepted_values:
               arguments:
                 values: [true, false]
 
+      - name: seconds_since_matching_purchase
+        description: >
+          Seconds since the previous purchase with matching customer,
+          basket and order characteristics. Null where no previous matching
+          purchase exists.
+
       - name: rapid_repeat_sequence_number
+        description: >
+          Sequential position of the purchase within its rapid-repeat group.
         data_tests:
           - not_null
 
       - name: rapid_repeat_group_size
+        description: Number of purchases belonging to the rapid-repeat group.
         data_tests:
           - not_null
 
 
   - name: fct_purchase_items
     description: >
-      Purchase-item-level fact table. One row represents one item position
-      within a purchase.
+      One row per basket position for completed purchases in the 2023
+      analysis period. The model combines purchase information with the
+      historically valid item version, promotion status, pricing information,
+      customer lifecycle fields and rapid-repeat diagnostics.
 
     columns:
+
       - name: purchase_item_key
-        description: Unique identifier of a purchase item.
+        description: Unique identifier for a basket position within a purchase.
         data_tests:
           - not_null
           - unique
 
       - name: purchase_key
-        description: Identifier of the purchase containing the item.
+        description: Purchase identifier associated with the basket item.
         data_tests:
           - not_null
           - relationships:
@@ -86,38 +188,138 @@ models:
                 field: purchase_key
 
       - name: customer_key
+        description: Identifier of the customer who made the purchase.
         data_tests:
           - not_null
 
       - name: time_order_received_utc
+        description: UTC timestamp when the purchase was received.
+        data_tests:
+          - not_null
+
+      - name: order_date
+        description: Calendar date of the purchase.
+        data_tests:
+          - not_null
+
+      - name: order_month
+        description: First day of the calendar month in which the purchase occurred.
+        data_tests:
+          - not_null
+
+      - name: customer_purchase_number_in_period
+        description: >
+          Sequential purchase number for the customer within the 2023
+          analysis period.
+        data_tests:
+          - not_null
+
+      - name: previous_customer_purchase_time_utc
+        description: >
+          Timestamp of the customer's previous observed purchase within
+          the analysis period. Null for the customer's first observed purchase.
+
+      - name: is_first_observed_purchase_in_period
+        description: >
+          True when the basket item belongs to the customer's first observed
+          purchase within the 2023 analysis period.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: is_repeat_purchase_in_period
+        description: >
+          True when the basket item belongs to a purchase preceded by another
+          observed purchase from the customer within the 2023 analysis period.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: days_since_previous_purchase
+        description: >
+          Number of calendar days since the customer's previous observed
+          purchase. Null for the first observed purchase.
+
+      - name: basket_position
+        description: Position of the item in the purchase basket.
         data_tests:
           - not_null
 
       - name: item_key
-        data_tests:
-          - not_null
-
-      - name: item_version_key
-        data_tests:
-          - not_null
-
-      - name: item_name
+        description: Identifier of the purchased item.
         data_tests:
           - not_null
 
       - name: item_count
+        description: Number of units of the item purchased.
         data_tests:
           - not_null
+
+      - name: item_version_key
+        description: >
+          Identifier of the historically valid item version at the time
+          of the purchase.
+
+      - name: item_name
+        description: Item name valid at the time of purchase.
+
+      - name: brand_name
+        description: Brand name valid at the time of purchase.
+
+      - name: item_category
+        description: Item category valid at the time of purchase.
+
+      - name: number_of_units
+        description: Number of units represented by one item package.
+
+      - name: weight_in_grams
+        description: Item weight in grams.
+
+      - name: unit_base_price
+        description: >
+          Product base price valid at the time of purchase.
+          Null values are retained because source item history contains
+          genuine missing product_base_price values.
 
       - name: currency
-        data_tests:
-          - not_null
+        description: Currency associated with the item price.
+
+      - name: vat_rate_percentage
+        description: VAT rate associated with the item price.
 
       - name: is_on_promotion
+        description: >
+          True when the item was covered by a promotion at the purchase timestamp.
         data_tests:
           - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: promo_type
+        description: Promotion type active at the purchase timestamp, where available.
+
+      - name: discount_percentage
+        description: Promotion discount percentage, where applicable.
+
+      - name: line_value_before_discount
+        description: >
+          Calculated item-line value before promotional discount where
+          source pricing is available.
+
+      - name: calculated_line_value_after_discount
+        description: >
+          Calculated item-line value after applying the identified promotion
+          where source pricing is available.
 
       - name: has_price
+        description: >
+          True when a historically valid product base price is available
+          for the purchased item.
         data_tests:
           - not_null
           - accepted_values:
@@ -125,6 +327,9 @@ models:
                 values: [true, false]
 
       - name: is_in_rapid_repeat_group
+        description: >
+          True when the parent purchase belongs to a rapid-repeat group.
+          This is a diagnostic flag rather than a confirmed duplicate label.
         data_tests:
           - not_null
           - accepted_values:
@@ -132,16 +337,95 @@ models:
                 values: [true, false]
 
       - name: is_rapid_repeat_candidate
+        description: >
+          True when the parent purchase is flagged as a rapid-repeat candidate.
         data_tests:
           - not_null
           - accepted_values:
               arguments:
                 values: [true, false]
 
+      - name: seconds_since_matching_purchase
+        description: >
+          Seconds since the preceding matching purchase, where one exists.
+
       - name: rapid_repeat_sequence_number
+        description: >
+          Position of the parent purchase within its rapid-repeat group.
         data_tests:
           - not_null
 
       - name: rapid_repeat_group_size
+        description: >
+          Number of purchases in the rapid-repeat group of the parent purchase.
         data_tests:
           - not_null
+
+  - name: dim_item_versions
+    description: >
+      Historical item dimension containing one row per item version.
+      Each version represents the product attributes that were valid during
+      a specific time interval. The model supports point-in-time analysis
+      of item names, categories, prices and other product attributes.
+
+    columns:
+
+      - name: item_version_key
+        description: Unique identifier of the historical item version.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: item_key
+        description: Business identifier of the item.
+        data_tests:
+          - not_null
+
+      - name: item_version_number
+        description: Sequential version number of the item.
+        data_tests:
+          - not_null
+
+      - name: valid_from_utc
+        description: Timestamp from which this version became valid.
+        data_tests:
+          - not_null
+
+      - name: valid_to_utc
+        description: >
+          Timestamp until which this version was valid.
+          Null for the currently valid version.
+
+      - name: is_current
+        description: True when this is the latest known version of the item.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: item_name
+        description: Item name valid during this version.
+
+      - name: brand_name
+        description: Brand name valid during this version.
+
+      - name: item_category
+        description: Item category valid during this version.
+
+      - name: number_of_units
+        description: Number of units contained in the product package.
+
+      - name: weight_in_grams
+        description: Product weight in grams.
+
+      - name: product_base_price
+        description: >
+          Product base price for this historical version.
+          Null values are preserved when the source data does not provide a price.
+
+      - name: currency
+        description: Currency associated with the product price.
+
+      - name: vat_rate_percentage
+        description: VAT percentage associated with the product price.

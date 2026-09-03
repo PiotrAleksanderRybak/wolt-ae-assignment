@@ -141,3 +141,24 @@ models:
       - name: rapid_repeat_group_size
         data_tests:
           - not_null
+
+      - name: customer_purchase_number_in_period
+        description: Sequential purchase number for the customer within the 2023 analysis period.
+        data_tests:
+          - not_null
+
+      - name: is_first_observed_purchase_in_period
+        description: True for the customer's first observed purchase within the analysis period.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: is_repeat_purchase_in_period
+        description: True when the purchase is not the customer's first observed purchase within the analysis period.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [true, false]
