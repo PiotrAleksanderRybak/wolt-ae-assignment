@@ -42,20 +42,20 @@ select
     promos.promo_type,
     promos.discount_percentage,
 
-    round(
+    cast(
         item_versions.product_base_price
-        * purchase_items.item_count,
-        2
+        * purchase_items.item_count
+        as number(18, 4)
     ) as line_value_before_discount,
 
-    round(
+    cast(
         item_versions.product_base_price
         * purchase_items.item_count
         * (
             1
             - coalesce(promos.discount_percentage, 0) / 100
-        ),
-        2
+        )
+        as number(18, 4)
     ) as calculated_line_value_after_discount
 
 from purchase_items

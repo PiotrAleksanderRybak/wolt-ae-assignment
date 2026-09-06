@@ -165,23 +165,39 @@ QUERIES = {
     """,
 
     "11_category_q1_vs_q4": f"""
-        with category_quarters as (
+        with current_items as (
 
             select
-                coalesce(item_category, 'Unknown') as item_category,
-                quarter(order_date) as quarter_number,
+                item_key,
+                item_category as current_item_category
+            from {ITEM_DIM}
+            where is_current
 
-                sum(item_count) as units,
-                count(distinct purchase_key) as purchases,
-                count(distinct customer_key) as customers,
+        ),
+
+        category_quarters as (
+
+            select
+                coalesce(
+                    d.current_item_category,
+                    'Unknown'
+                ) as item_category,
+                quarter(i.order_date) as quarter_number,
+
+                sum(i.item_count) as units,
+                count(distinct i.purchase_key) as purchases,
+                count(distinct i.customer_key) as customers,
 
                 sum(
-                    iff(is_on_promotion, item_count, 0)
+                    iff(i.is_on_promotion, i.item_count, 0)
                 ) as promo_units
 
-            from {PURCHASE_ITEMS}
+            from {PURCHASE_ITEMS} i
 
-            where quarter(order_date) in (1, 4)
+            left join current_items d
+                on i.item_key = d.item_key
+
+            where quarter(i.order_date) in (1, 4)
 
             group by 1, 2
         ),
@@ -284,7 +300,7 @@ QUERIES = {
 
         from pivoted
 
-        order by units_change_pct desc nulls last
+        order by q4_units desc
     """,
 
     "12_star_products": f"""
@@ -1194,6 +1210,134 @@ QUERIES = {
     """,
 
 
+    "44_promo_first_followup": f"""
+        with first_purchase_by_customer as (
+
+            select
+                customer_key,
+                purchase_key as first_purchase_key
+            from {PURCHASES}
+            where is_first_observed_purchase_in_period
+
+        ),
+
+        first_basket_flags as (
+
+            select
+                customer_key,
+                purchase_key,
+                max(iff(is_on_promotion, 1, 0)) as has_promo,
+                max(iff(not is_on_promotion, 1, 0)) as has_non_promo
+            from {PURCHASE_ITEMS}
+            where is_first_observed_purchase_in_period
+            group by 1, 2
+
+        ),
+
+        promo_first_customers as (
+
+            select
+                f.customer_key,
+                f.first_purchase_key,
+                b.has_non_promo as first_basket_has_non_promo
+            from first_purchase_by_customer f
+            inner join first_basket_flags b
+                on f.customer_key = b.customer_key
+                and f.first_purchase_key = b.purchase_key
+            where b.has_promo = 1
+
+        ),
+
+        customer_followup as (
+
+            select
+                p.customer_key,
+                count(
+                    distinct iff(
+                        p.purchase_key <> c.first_purchase_key,
+                        p.purchase_key,
+                        null
+                    )
+                ) as purchases_after_first,
+                max(
+                    iff(
+                        p.purchase_key <> c.first_purchase_key
+                        and not i.is_on_promotion,
+                        1,
+                        0
+                    )
+                ) as bought_non_promo_after_first
+            from promo_first_customers c
+            inner join {PURCHASES} p
+                on c.customer_key = p.customer_key
+            inner join {PURCHASE_ITEMS} i
+                on p.purchase_key = i.purchase_key
+            group by p.customer_key
+
+        ),
+
+        all_units as (
+
+            select
+                sum(i.item_count) as units,
+                sum(
+                    iff(i.is_on_promotion, i.item_count, 0)
+                ) as promo_units
+            from promo_first_customers c
+            inner join {PURCHASE_ITEMS} i
+                on c.customer_key = i.customer_key
+
+        ),
+
+        after_first_units as (
+
+            select
+                sum(i.item_count) as units,
+                sum(
+                    iff(i.is_on_promotion, i.item_count, 0)
+                ) as promo_units
+            from promo_first_customers c
+            inner join {PURCHASE_ITEMS} i
+                on c.customer_key = i.customer_key
+            where i.purchase_key <> c.first_purchase_key
+
+        )
+
+        select
+            count(*) as promo_first_customers,
+            count_if(first_basket_has_non_promo = 1)
+                as mixed_first_basket_customers,
+            count_if(f.purchases_after_first > 0)
+                as repeat_customers,
+            count_if(
+                f.purchases_after_first > 0
+                and f.bought_non_promo_after_first = 1
+            ) as repeat_customers_buying_nonpromo,
+            count_if(
+                f.purchases_after_first > 0
+                and f.bought_non_promo_after_first = 0
+            ) as repeat_customers_only_promo_after_first,
+            round(
+                100.0 * a.promo_units / nullif(a.units, 0),
+                2
+            ) as promo_unit_share_all_2023_pct,
+            round(
+                100.0 * af.promo_units / nullif(af.units, 0),
+                2
+            ) as promo_unit_share_after_first_pct
+        from promo_first_customers c
+        inner join customer_followup f
+            on c.customer_key = f.customer_key
+        cross join all_units a
+        cross join after_first_units af
+        group by
+            a.promo_units,
+            a.units,
+            af.promo_units,
+            af.units
+    """,
+
+
     # =================================================================
     # SENSITIVITY
     # Are conclusions robust to rapid-repeat candidates?
@@ -1598,9 +1742,13 @@ def main():
                 "population and evaluated through sensitivity analysis."
             ),
             (
-                "Product/category performance should primarily use units, "
-                "purchases and customers because product price coverage "
-                "is materially incomplete."
+                "Q1 vs Q4 category trends use the current category mapping "
+                "so taxonomy changes are not mistaken for demand changes."
+            ),
+            (
+                "For duplicated item-log IDs with conflicting price variants, "
+                "the positive base-price record is retained and item-level "
+                "discounted values are reconciled to source basket values."
             ),
             (
                 "Promotion comparisons are observational and should not "

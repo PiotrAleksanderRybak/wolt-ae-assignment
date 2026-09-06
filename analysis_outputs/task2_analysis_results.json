@@ -19,9 +19,9 @@
       {
         "PURCHASES": 94822,
         "CUSTOMERS": 2001,
-        "MERCHANDISE_REVENUE": 427698.14,
+        "MERCHANDISE_REVENUE": 427691.48,
         "SERVICE_FEE_REVENUE": 132486.2,
-        "GROSS_ORDER_REVENUE": 560184.34,
+        "GROSS_ORDER_REVENUE": 560177.68,
         "COURIER_COST": 178937.61,
         "AVG_BASKET_VALUE": 4.51,
         "AVG_DELIVERY_DISTANCE_KM": 3.48,
@@ -54,8 +54,8 @@
         "PURCHASES": 94822,
         "PROMO_UNITS": 9033.0,
         "PROMO_UNIT_SHARE_PCT": 5.8,
-        "ROWS_WITH_PRICE": 47714,
-        "PRICE_ROW_COVERAGE_PCT": 39.5
+        "ROWS_WITH_PRICE": 120795,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       }
     ]
   },
@@ -93,7 +93,7 @@
         "PURCHASES": 5722,
         "ACTIVE_CUSTOMERS": 1446,
         "FIRST_OBSERVED_PURCHASES": 273,
-        "MERCHANDISE_REVENUE": 25011.91,
+        "MERCHANDISE_REVENUE": 25011.95,
         "SERVICE_FEE_REVENUE": 8050.56,
         "COURIER_COST": 10785.55,
         "AVG_BASKET_VALUE": 4.37,
@@ -106,7 +106,7 @@
         "PURCHASES": 7666,
         "ACTIVE_CUSTOMERS": 1594,
         "FIRST_OBSERVED_PURCHASES": 153,
-        "MERCHANDISE_REVENUE": 33390.68,
+        "MERCHANDISE_REVENUE": 33390.89,
         "SERVICE_FEE_REVENUE": 10730.79,
         "COURIER_COST": 14427.75,
         "AVG_BASKET_VALUE": 4.36,
@@ -119,7 +119,7 @@
         "PURCHASES": 6685,
         "ACTIVE_CUSTOMERS": 1568,
         "FIRST_OBSERVED_PURCHASES": 51,
-        "MERCHANDISE_REVENUE": 29627.06,
+        "MERCHANDISE_REVENUE": 29627.28,
         "SERVICE_FEE_REVENUE": 9246.79,
         "COURIER_COST": 12582.86,
         "AVG_BASKET_VALUE": 4.43,
@@ -132,7 +132,7 @@
         "PURCHASES": 7223,
         "ACTIVE_CUSTOMERS": 1582,
         "FIRST_OBSERVED_PURCHASES": 40,
-        "MERCHANDISE_REVENUE": 31624.01,
+        "MERCHANDISE_REVENUE": 31624.02,
         "SERVICE_FEE_REVENUE": 10100.09,
         "COURIER_COST": 13608.47,
         "AVG_BASKET_VALUE": 4.38,
@@ -145,7 +145,7 @@
         "PURCHASES": 6631,
         "ACTIVE_CUSTOMERS": 1608,
         "FIRST_OBSERVED_PURCHASES": 20,
-        "MERCHANDISE_REVENUE": 28677.77,
+        "MERCHANDISE_REVENUE": 28677.84,
         "SERVICE_FEE_REVENUE": 9296.84,
         "COURIER_COST": 12512.57,
         "AVG_BASKET_VALUE": 4.32,
@@ -158,7 +158,7 @@
         "PURCHASES": 6930,
         "ACTIVE_CUSTOMERS": 1585,
         "FIRST_OBSERVED_PURCHASES": 6,
-        "MERCHANDISE_REVENUE": 30487.56,
+        "MERCHANDISE_REVENUE": 30487.39,
         "SERVICE_FEE_REVENUE": 9683.38,
         "COURIER_COST": 13035.33,
         "AVG_BASKET_VALUE": 4.4,
@@ -171,7 +171,7 @@
         "PURCHASES": 8530,
         "ACTIVE_CUSTOMERS": 1696,
         "FIRST_OBSERVED_PURCHASES": 2,
-        "MERCHANDISE_REVENUE": 37402.1,
+        "MERCHANDISE_REVENUE": 37401.07,
         "SERVICE_FEE_REVENUE": 11779.25,
         "COURIER_COST": 16126.9,
         "AVG_BASKET_VALUE": 4.38,
@@ -184,7 +184,7 @@
         "PURCHASES": 10031,
         "ACTIVE_CUSTOMERS": 1768,
         "FIRST_OBSERVED_PURCHASES": 0,
-        "MERCHANDISE_REVENUE": 44848.92,
+        "MERCHANDISE_REVENUE": 44848.55,
         "SERVICE_FEE_REVENUE": 13821.43,
         "COURIER_COST": 19004.4,
         "AVG_BASKET_VALUE": 4.47,
@@ -197,7 +197,7 @@
         "PURCHASES": 10623,
         "ACTIVE_CUSTOMERS": 1828,
         "FIRST_OBSERVED_PURCHASES": 0,
-        "MERCHANDISE_REVENUE": 48038.47,
+        "MERCHANDISE_REVENUE": 48035.18,
         "SERVICE_FEE_REVENUE": 14669.27,
         "COURIER_COST": 20039.2,
         "AVG_BASKET_VALUE": 4.52,
@@ -210,7 +210,7 @@
         "PURCHASES": 9722,
         "ACTIVE_CUSTOMERS": 1812,
         "FIRST_OBSERVED_PURCHASES": 0,
-        "MERCHANDISE_REVENUE": 49158.44,
+        "MERCHANDISE_REVENUE": 49156.63,
         "SERVICE_FEE_REVENUE": 13847.12,
         "COURIER_COST": 18365.02,
         "AVG_BASKET_VALUE": 5.06,
@@ -223,7 +223,7 @@
         "PURCHASES": 9726,
         "ACTIVE_CUSTOMERS": 1816,
         "FIRST_OBSERVED_PURCHASES": 0,
-        "MERCHANDISE_REVENUE": 45714.21,
+        "MERCHANDISE_REVENUE": 45713.67,
         "SERVICE_FEE_REVENUE": 13746.32,
         "COURIER_COST": 18377.1,
         "AVG_BASKET_VALUE": 4.7,
@@ -254,7 +254,7 @@
         "UNITS_PER_PURCHASE": 1.38,
         "PROMO_UNITS": 4387.0,
         "PROMO_UNIT_SHARE_PCT": 7.09,
-        "PRICE_ROW_COVERAGE_PCT": 29.95
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_CATEGORY": "Chocolate",
@@ -264,7 +264,7 @@
         "UNITS_PER_PURCHASE": 1.63,
         "PROMO_UNITS": 3863.0,
         "PROMO_UNIT_SHARE_PCT": 8.65,
-        "PRICE_ROW_COVERAGE_PCT": 43.42
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_CATEGORY": "Other Confectionary",
@@ -274,7 +274,7 @@
         "UNITS_PER_PURCHASE": 1.55,
         "PROMO_UNITS": 91.0,
         "PROMO_UNIT_SHARE_PCT": 0.36,
-        "PRICE_ROW_COVERAGE_PCT": 4.44
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_CATEGORY": "Cheese Crackers, Breadsticks & Dipping",
@@ -284,7 +284,7 @@
         "UNITS_PER_PURCHASE": 1.19,
         "PROMO_UNITS": 370.0,
         "PROMO_UNIT_SHARE_PCT": 2.9,
-        "PRICE_ROW_COVERAGE_PCT": 83.65
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_CATEGORY": "Cookies",
@@ -294,7 +294,7 @@
         "UNITS_PER_PURCHASE": 1.22,
         "PROMO_UNITS": 284.0,
         "PROMO_UNIT_SHARE_PCT": 3.11,
-        "PRICE_ROW_COVERAGE_PCT": 89.37
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_CATEGORY": "Chocolate & Sweet Spreads",
@@ -304,7 +304,7 @@
         "UNITS_PER_PURCHASE": 1.03,
         "PROMO_UNITS": 34.0,
         "PROMO_UNIT_SHARE_PCT": 2.65,
-        "PRICE_ROW_COVERAGE_PCT": 73.6
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_CATEGORY": "Toffee, Fudge & Nougat",
@@ -314,7 +314,7 @@
         "UNITS_PER_PURCHASE": 1.53,
         "PROMO_UNITS": 4.0,
         "PROMO_UNIT_SHARE_PCT": 0.47,
-        "PRICE_ROW_COVERAGE_PCT": 49.12
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       }
     ]
   },
@@ -344,87 +344,24 @@
     "records": [
       {
         "ITEM_CATEGORY": "Chocolate",
-        "Q1_UNITS": 4356.0,
+        "Q1_UNITS": 13230.0,
         "Q4_UNITS": 22901.0,
-        "Q1_PURCHASES": 3237,
+        "Q1_PURCHASES": 8045,
         "Q4_PURCHASES": 12710,
-        "Q1_CUSTOMERS": 1103,
+        "Q1_CUSTOMERS": 1618,
         "Q4_CUSTOMERS": 1892,
         "Q1_PROMO_UNITS": 163.0,
         "Q4_PROMO_UNITS": 2249.0,
-        "UNITS_ABSOLUTE_CHANGE": 18545.0,
-        "UNITS_CHANGE_PCT": 425.73,
-        "PURCHASES_ABSOLUTE_CHANGE": 9473.0,
-        "PURCHASES_CHANGE_PCT": 292.65,
-        "CUSTOMERS_ABSOLUTE_CHANGE": 789.0,
-        "CUSTOMERS_CHANGE_PCT": 71.53,
-        "Q1_UNITS_PER_PURCHASE": 1.35,
+        "UNITS_ABSOLUTE_CHANGE": 9671.0,
+        "UNITS_CHANGE_PCT": 73.1,
+        "PURCHASES_ABSOLUTE_CHANGE": 4665.0,
+        "PURCHASES_CHANGE_PCT": 57.99,
+        "CUSTOMERS_ABSOLUTE_CHANGE": 274.0,
+        "CUSTOMERS_CHANGE_PCT": 16.93,
+        "Q1_UNITS_PER_PURCHASE": 1.64,
         "Q4_UNITS_PER_PURCHASE": 1.8,
-        "Q1_PROMO_UNIT_SHARE_PCT": 3.74,
+        "Q1_PROMO_UNIT_SHARE_PCT": 1.23,
         "Q4_PROMO_UNIT_SHARE_PCT": 9.82
-      },
-      {
-        "ITEM_CATEGORY": "Cookies",
-        "Q1_UNITS": 1516.0,
-        "Q4_UNITS": 2971.0,
-        "Q1_PURCHASES": 1261,
-        "Q4_PURCHASES": 2409,
-        "Q1_CUSTOMERS": 601,
-        "Q4_CUSTOMERS": 953,
-        "Q1_PROMO_UNITS": 19.0,
-        "Q4_PROMO_UNITS": 122.0,
-        "UNITS_ABSOLUTE_CHANGE": 1455.0,
-        "UNITS_CHANGE_PCT": 95.98,
-        "PURCHASES_ABSOLUTE_CHANGE": 1148.0,
-        "PURCHASES_CHANGE_PCT": 91.04,
-        "CUSTOMERS_ABSOLUTE_CHANGE": 352.0,
-        "CUSTOMERS_CHANGE_PCT": 58.57,
-        "Q1_UNITS_PER_PURCHASE": 1.2,
-        "Q4_UNITS_PER_PURCHASE": 1.23,
-        "Q1_PROMO_UNIT_SHARE_PCT": 1.25,
-        "Q4_PROMO_UNIT_SHARE_PCT": 4.11
-      },
-      {
-        "ITEM_CATEGORY": "Toffee, Fudge & Nougat",
-        "Q1_UNITS": 145.0,
-        "Q4_UNITS": 262.0,
-        "Q1_PURCHASES": 113,
-        "Q4_PURCHASES": 177,
-        "Q1_CUSTOMERS": 79,
-        "Q4_CUSTOMERS": 107,
-        "Q1_PROMO_UNITS": 0.0,
-        "Q4_PROMO_UNITS": 0.0,
-        "UNITS_ABSOLUTE_CHANGE": 117.0,
-        "UNITS_CHANGE_PCT": 80.69,
-        "PURCHASES_ABSOLUTE_CHANGE": 64.0,
-        "PURCHASES_CHANGE_PCT": 56.64,
-        "CUSTOMERS_ABSOLUTE_CHANGE": 28.0,
-        "CUSTOMERS_CHANGE_PCT": 35.44,
-        "Q1_UNITS_PER_PURCHASE": 1.28,
-        "Q4_UNITS_PER_PURCHASE": 1.48,
-        "Q1_PROMO_UNIT_SHARE_PCT": 0.0,
-        "Q4_PROMO_UNIT_SHARE_PCT": 0.0
-      },
-      {
-        "ITEM_CATEGORY": "Chocolate & Sweet Spreads",
-        "Q1_UNITS": 262.0,
-        "Q4_UNITS": 420.0,
-        "Q1_PURCHASES": 254,
-        "Q4_PURCHASES": 410,
-        "Q1_CUSTOMERS": 159,
-        "Q4_CUSTOMERS": 238,
-        "Q1_PROMO_UNITS": 1.0,
-        "Q4_PROMO_UNITS": 9.0,
-        "UNITS_ABSOLUTE_CHANGE": 158.0,
-        "UNITS_CHANGE_PCT": 60.31,
-        "PURCHASES_ABSOLUTE_CHANGE": 156.0,
-        "PURCHASES_CHANGE_PCT": 61.42,
-        "CUSTOMERS_ABSOLUTE_CHANGE": 79.0,
-        "CUSTOMERS_CHANGE_PCT": 49.69,
-        "Q1_UNITS_PER_PURCHASE": 1.03,
-        "Q4_UNITS_PER_PURCHASE": 1.02,
-        "Q1_PROMO_UNIT_SHARE_PCT": 0.38,
-        "Q4_PROMO_UNIT_SHARE_PCT": 2.14
       },
       {
         "ITEM_CATEGORY": "Crisp & Snacks",
@@ -469,25 +406,88 @@
         "Q4_PROMO_UNIT_SHARE_PCT": 1.01
       },
       {
+        "ITEM_CATEGORY": "Cookies",
+        "Q1_UNITS": 1516.0,
+        "Q4_UNITS": 2971.0,
+        "Q1_PURCHASES": 1261,
+        "Q4_PURCHASES": 2409,
+        "Q1_CUSTOMERS": 601,
+        "Q4_CUSTOMERS": 953,
+        "Q1_PROMO_UNITS": 19.0,
+        "Q4_PROMO_UNITS": 122.0,
+        "UNITS_ABSOLUTE_CHANGE": 1455.0,
+        "UNITS_CHANGE_PCT": 95.98,
+        "PURCHASES_ABSOLUTE_CHANGE": 1148.0,
+        "PURCHASES_CHANGE_PCT": 91.04,
+        "CUSTOMERS_ABSOLUTE_CHANGE": 352.0,
+        "CUSTOMERS_CHANGE_PCT": 58.57,
+        "Q1_UNITS_PER_PURCHASE": 1.2,
+        "Q4_UNITS_PER_PURCHASE": 1.23,
+        "Q1_PROMO_UNIT_SHARE_PCT": 1.25,
+        "Q4_PROMO_UNIT_SHARE_PCT": 4.11
+      },
+      {
         "ITEM_CATEGORY": "Other Confectionary",
-        "Q1_UNITS": 9247.0,
+        "Q1_UNITS": 373.0,
         "Q4_UNITS": 1075.0,
-        "Q1_PURCHASES": 6028,
+        "Q1_PURCHASES": 272,
         "Q4_PURCHASES": 662,
-        "Q1_CUSTOMERS": 1465,
+        "Q1_CUSTOMERS": 163,
         "Q4_CUSTOMERS": 341,
         "Q1_PROMO_UNITS": 17.0,
         "Q4_PROMO_UNITS": 45.0,
-        "UNITS_ABSOLUTE_CHANGE": -8172.0,
-        "UNITS_CHANGE_PCT": -88.37,
-        "PURCHASES_ABSOLUTE_CHANGE": -5366.0,
-        "PURCHASES_CHANGE_PCT": -89.02,
-        "CUSTOMERS_ABSOLUTE_CHANGE": -1124.0,
-        "CUSTOMERS_CHANGE_PCT": -76.72,
-        "Q1_UNITS_PER_PURCHASE": 1.53,
+        "UNITS_ABSOLUTE_CHANGE": 702.0,
+        "UNITS_CHANGE_PCT": 188.2,
+        "PURCHASES_ABSOLUTE_CHANGE": 390.0,
+        "PURCHASES_CHANGE_PCT": 143.38,
+        "CUSTOMERS_ABSOLUTE_CHANGE": 178.0,
+        "CUSTOMERS_CHANGE_PCT": 109.2,
+        "Q1_UNITS_PER_PURCHASE": 1.37,
         "Q4_UNITS_PER_PURCHASE": 1.62,
-        "Q1_PROMO_UNIT_SHARE_PCT": 0.18,
+        "Q1_PROMO_UNIT_SHARE_PCT": 4.56,
         "Q4_PROMO_UNIT_SHARE_PCT": 4.19
+      },
+      {
+        "ITEM_CATEGORY": "Chocolate & Sweet Spreads",
+        "Q1_UNITS": 262.0,
+        "Q4_UNITS": 420.0,
+        "Q1_PURCHASES": 254,
+        "Q4_PURCHASES": 410,
+        "Q1_CUSTOMERS": 159,
+        "Q4_CUSTOMERS": 238,
+        "Q1_PROMO_UNITS": 1.0,
+        "Q4_PROMO_UNITS": 9.0,
+        "UNITS_ABSOLUTE_CHANGE": 158.0,
+        "UNITS_CHANGE_PCT": 60.31,
+        "PURCHASES_ABSOLUTE_CHANGE": 156.0,
+        "PURCHASES_CHANGE_PCT": 61.42,
+        "CUSTOMERS_ABSOLUTE_CHANGE": 79.0,
+        "CUSTOMERS_CHANGE_PCT": 49.69,
+        "Q1_UNITS_PER_PURCHASE": 1.03,
+        "Q4_UNITS_PER_PURCHASE": 1.02,
+        "Q1_PROMO_UNIT_SHARE_PCT": 0.38,
+        "Q4_PROMO_UNIT_SHARE_PCT": 2.14
+      },
+      {
+        "ITEM_CATEGORY": "Toffee, Fudge & Nougat",
+        "Q1_UNITS": 145.0,
+        "Q4_UNITS": 262.0,
+        "Q1_PURCHASES": 113,
+        "Q4_PURCHASES": 177,
+        "Q1_CUSTOMERS": 79,
+        "Q4_CUSTOMERS": 107,
+        "Q1_PROMO_UNITS": 0.0,
+        "Q4_PROMO_UNITS": 0.0,
+        "UNITS_ABSOLUTE_CHANGE": 117.0,
+        "UNITS_CHANGE_PCT": 80.69,
+        "PURCHASES_ABSOLUTE_CHANGE": 64.0,
+        "PURCHASES_CHANGE_PCT": 56.64,
+        "CUSTOMERS_ABSOLUTE_CHANGE": 28.0,
+        "CUSTOMERS_CHANGE_PCT": 35.44,
+        "Q1_UNITS_PER_PURCHASE": 1.28,
+        "Q4_UNITS_PER_PURCHASE": 1.48,
+        "Q1_PROMO_UNIT_SHARE_PCT": 0.0,
+        "Q4_PROMO_UNIT_SHARE_PCT": 0.0
       }
     ]
   },
@@ -516,7 +516,7 @@
         "UNITS_PER_PURCHASE": 1.59,
         "PROMO_UNITS": 2990.0,
         "PROMO_UNIT_SHARE_PCT": 6.34,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "e9c4aa9e65917445495602a4adc16675",
@@ -528,7 +528,7 @@
         "UNITS_PER_PURCHASE": 1.3,
         "PROMO_UNITS": 3827.0,
         "PROMO_UNIT_SHARE_PCT": 9.23,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "2f605027e796b8c1d897c6100903c6d7",
@@ -600,7 +600,7 @@
         "UNITS_PER_PURCHASE": 1.05,
         "PROMO_UNITS": 129.0,
         "PROMO_UNIT_SHARE_PCT": 6.64,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "d3dffe73c943311024ef5b4b71e3f598",
@@ -624,7 +624,7 @@
         "UNITS_PER_PURCHASE": 1.05,
         "PROMO_UNITS": 33.0,
         "PROMO_UNIT_SHARE_PCT": 1.93,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "edb0f4aa63864fc9a85372d15cb65440",
@@ -708,7 +708,7 @@
         "UNITS_PER_PURCHASE": 1.55,
         "PROMO_UNITS": 77.0,
         "PROMO_UNIT_SHARE_PCT": 5.44,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "5d3969ae02b82a2e1f84457d03fedcab",
@@ -720,7 +720,7 @@
         "UNITS_PER_PURCHASE": 1.5,
         "PROMO_UNITS": 121.0,
         "PROMO_UNIT_SHARE_PCT": 8.61,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "64f36aa14d1921b5f20921a6fb8b8bc0",
@@ -732,7 +732,7 @@
         "UNITS_PER_PURCHASE": 1.03,
         "PROMO_UNITS": 60.0,
         "PROMO_UNIT_SHARE_PCT": 4.28,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "782c2fdec7b604daefea9bf7b783a7bb",
@@ -768,7 +768,7 @@
         "UNITS_PER_PURCHASE": 1.23,
         "PROMO_UNITS": 86.0,
         "PROMO_UNIT_SHARE_PCT": 6.31,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "5dcef824f2fd5224744a86e4c7dd250d",
@@ -876,7 +876,7 @@
         "UNITS_PER_PURCHASE": 1.02,
         "PROMO_UNITS": 0.0,
         "PROMO_UNIT_SHARE_PCT": 0.0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "2247902fe615e4ad16d53af0070362da",
@@ -888,7 +888,7 @@
         "UNITS_PER_PURCHASE": 1.17,
         "PROMO_UNITS": 20.0,
         "PROMO_UNIT_SHARE_PCT": 1.77,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "61d7a42ecec8482529b308f32ff598b1",
@@ -960,7 +960,7 @@
         "UNITS_PER_PURCHASE": 1.05,
         "PROMO_UNITS": 24.0,
         "PROMO_UNIT_SHARE_PCT": 2.66,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "321127a76333fb0eceef367e946ce2cb",
@@ -1068,7 +1068,7 @@
         "UNITS_PER_PURCHASE": 1.8,
         "PROMO_UNITS": 4.0,
         "PROMO_UNIT_SHARE_PCT": 0.86,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "b920b20ae65b43819f8696b2a6efcb21",
@@ -1080,7 +1080,7 @@
         "UNITS_PER_PURCHASE": 1.02,
         "PROMO_UNITS": 23.0,
         "PROMO_UNIT_SHARE_PCT": 6.73,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "9457e16e60a76e40ad486d39b0c4a8b1",
@@ -1200,19 +1200,7 @@
         "UNITS_PER_PURCHASE": 1.14,
         "PROMO_UNITS": 0.0,
         "PROMO_UNIT_SHARE_PCT": 0.0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
-      },
-      {
-        "ITEM_KEY": "eb53c87b1ee83c0586a633daab87837f",
-        "CURRENT_ITEM_NAME": "Ferrero Kinder Bueno Chocolate Bar, (10x21,5 g), 215 g",
-        "CURRENT_ITEM_CATEGORY": "Chocolate",
-        "UNITS": 27.0,
-        "PURCHASES": 15,
-        "CUSTOMERS": 10,
-        "UNITS_PER_PURCHASE": 1.8,
-        "PROMO_UNITS": 0.0,
-        "PROMO_UNIT_SHARE_PCT": 0.0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "6bbc265b0d9702985b61186ef2cec617",
@@ -1224,6 +1212,18 @@
         "UNITS_PER_PURCHASE": 1.04,
         "PROMO_UNITS": 1.0,
         "PROMO_UNIT_SHARE_PCT": 3.7,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
+      },
+      {
+        "ITEM_KEY": "eb53c87b1ee83c0586a633daab87837f",
+        "CURRENT_ITEM_NAME": "Ferrero Kinder Bueno Chocolate Bar, (10x21,5 g), 215 g",
+        "CURRENT_ITEM_CATEGORY": "Chocolate",
+        "UNITS": 27.0,
+        "PURCHASES": 15,
+        "CUSTOMERS": 10,
+        "UNITS_PER_PURCHASE": 1.8,
+        "PROMO_UNITS": 0.0,
+        "PROMO_UNIT_SHARE_PCT": 0.0,
         "PRICE_ROW_COVERAGE_PCT": 100.0
       }
     ]
@@ -1999,19 +1999,6 @@
         "UNITS_CHANGE_PCT": 400.0
       },
       {
-        "HISTORICAL_ITEM_CATEGORY": "Other Confectionary",
-        "ITEM_KEY": "6bbc265b0d9702985b61186ef2cec617",
-        "ITEM_NAME": "Nestlé Choco Crossies Crunchy Balls Milk Chocolate, 200 g",
-        "Q1_UNITS": 5.0,
-        "Q4_UNITS": 13.0,
-        "Q1_PURCHASES": 5.0,
-        "Q4_PURCHASES": 13.0,
-        "Q1_CUSTOMERS": 5.0,
-        "Q4_CUSTOMERS": 7.0,
-        "UNITS_ABSOLUTE_CHANGE": 8.0,
-        "UNITS_CHANGE_PCT": 160.0
-      },
-      {
         "HISTORICAL_ITEM_CATEGORY": "Toffee, Fudge & Nougat",
         "ITEM_KEY": "9f8bd236cf455c9fa6a5fb11146b9368",
         "ITEM_NAME": "Muh Muhs Original cream toffee, 215 g",
@@ -2023,6 +2010,19 @@
         "Q4_CUSTOMERS": 19.0,
         "UNITS_ABSOLUTE_CHANGE": 8.0,
         "UNITS_CHANGE_PCT": 25.0
+      },
+      {
+        "HISTORICAL_ITEM_CATEGORY": "Other Confectionary",
+        "ITEM_KEY": "6bbc265b0d9702985b61186ef2cec617",
+        "ITEM_NAME": "Nestlé Choco Crossies Crunchy Balls Milk Chocolate, 200 g",
+        "Q1_UNITS": 5.0,
+        "Q4_UNITS": 13.0,
+        "Q1_PURCHASES": 5.0,
+        "Q4_PURCHASES": 13.0,
+        "Q1_CUSTOMERS": 5.0,
+        "Q4_CUSTOMERS": 7.0,
+        "UNITS_ABSOLUTE_CHANGE": 8.0,
+        "UNITS_CHANGE_PCT": 160.0
       },
       {
         "HISTORICAL_ITEM_CATEGORY": "Chocolate & Sweet Spreads",
@@ -5681,14 +5681,14 @@
       },
       {
         "ORDER_HOUR": 0,
-        "ITEM_CATEGORY": "Cookies",
+        "ITEM_CATEGORY": "Cheese Crackers, Breadsticks & Dipping",
         "UNITS": 2.0,
         "PURCHASES": 2,
         "CUSTOMERS": 2
       },
       {
         "ORDER_HOUR": 0,
-        "ITEM_CATEGORY": "Cheese Crackers, Breadsticks & Dipping",
+        "ITEM_CATEGORY": "Cookies",
         "UNITS": 2.0,
         "PURCHASES": 2,
         "CUSTOMERS": 2
@@ -6927,6 +6927,29 @@
       }
     ]
   },
+  "44_promo_first_followup": {
+    "row_count": 1,
+    "columns": [
+      "PROMO_FIRST_CUSTOMERS",
+      "MIXED_FIRST_BASKET_CUSTOMERS",
+      "REPEAT_CUSTOMERS",
+      "REPEAT_CUSTOMERS_BUYING_NONPROMO",
+      "REPEAT_CUSTOMERS_ONLY_PROMO_AFTER_FIRST",
+      "PROMO_UNIT_SHARE_ALL_2023_PCT",
+      "PROMO_UNIT_SHARE_AFTER_FIRST_PCT"
+    ],
+    "records": [
+      {
+        "PROMO_FIRST_CUSTOMERS": 44,
+        "MIXED_FIRST_BASKET_CUSTOMERS": 26,
+        "REPEAT_CUSTOMERS": 44,
+        "REPEAT_CUSTOMERS_BUYING_NONPROMO": 44,
+        "REPEAT_CUSTOMERS_ONLY_PROMO_AFTER_FIRST": 0,
+        "PROMO_UNIT_SHARE_ALL_2023_PCT": 7.73,
+        "PROMO_UNIT_SHARE_AFTER_FIRST_PCT": 6.46
+      }
+    ]
+  },
   "50_overall_rapid_repeat_sensitivity": {
     "row_count": 2,
     "columns": [
@@ -6942,7 +6965,7 @@
         "SCENARIO": "all_purchases",
         "PURCHASES": 94822,
         "CUSTOMERS": 2001,
-        "MERCHANDISE_REVENUE": 427698.14,
+        "MERCHANDISE_REVENUE": 427691.48,
         "AVG_BASKET_VALUE": 4.51,
         "UNITS": 155628.0
       },
@@ -6950,7 +6973,7 @@
         "SCENARIO": "exclude_rapid_repeat_candidates",
         "PURCHASES": 86423,
         "CUSTOMERS": 2001,
-        "MERCHANDISE_REVENUE": 393833.72,
+        "MERCHANDISE_REVENUE": 393827.57,
         "AVG_BASKET_VALUE": 4.56,
         "UNITS": 143345.0
       }
@@ -7517,16 +7540,16 @@
         "CANDIDATE_UNIT_SHARE_PCT": 3.13
       },
       {
-        "ITEM_KEY": "6bbc265b0d9702985b61186ef2cec617",
-        "ITEM_NAME": "Nestlé Choco Crossies Crunchy Balls Milk Chocolate, 200 g",
+        "ITEM_KEY": "eb53c87b1ee83c0586a633daab87837f",
+        "ITEM_NAME": "Ferrero Kinder Bueno Chocolate Bar, (10x21,5 g), 215 g",
         "ALL_UNITS": 27.0,
         "CLEAN_UNITS": 25.0,
         "CANDIDATE_UNITS": 2.0,
         "CANDIDATE_UNIT_SHARE_PCT": 7.41
       },
       {
-        "ITEM_KEY": "eb53c87b1ee83c0586a633daab87837f",
-        "ITEM_NAME": "Ferrero Kinder Bueno Chocolate Bar, (10x21,5 g), 215 g",
+        "ITEM_KEY": "6bbc265b0d9702985b61186ef2cec617",
+        "ITEM_NAME": "Nestlé Choco Crossies Crunchy Balls Milk Chocolate, 200 g",
         "ALL_UNITS": 27.0,
         "CLEAN_UNITS": 25.0,
         "CANDIDATE_UNITS": 2.0,
@@ -7549,65 +7572,65 @@
       {
         "ITEM_CATEGORY": "Crisp & Snacks",
         "PURCHASE_ITEM_ROWS": 51527,
-        "ROWS_WITH_PRICE": 15431,
-        "PRICE_ROW_COVERAGE_PCT": 29.95,
+        "ROWS_WITH_PRICE": 51527,
+        "PRICE_ROW_COVERAGE_PCT": 100.0,
         "UNITS": 61844.0,
-        "UNITS_WITH_PRICE": 16162.0,
-        "PRICE_UNIT_COVERAGE_PCT": 26.13
+        "UNITS_WITH_PRICE": 61844.0,
+        "PRICE_UNIT_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_CATEGORY": "Chocolate",
         "PURCHASE_ITEM_ROWS": 31382,
-        "ROWS_WITH_PRICE": 13625,
-        "PRICE_ROW_COVERAGE_PCT": 43.42,
+        "ROWS_WITH_PRICE": 31382,
+        "PRICE_ROW_COVERAGE_PCT": 100.0,
         "UNITS": 44647.0,
-        "UNITS_WITH_PRICE": 16226.0,
-        "PRICE_UNIT_COVERAGE_PCT": 36.34
+        "UNITS_WITH_PRICE": 44647.0,
+        "PRICE_UNIT_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_CATEGORY": "Other Confectionary",
         "PURCHASE_ITEM_ROWS": 16631,
-        "ROWS_WITH_PRICE": 739,
-        "PRICE_ROW_COVERAGE_PCT": 4.44,
+        "ROWS_WITH_PRICE": 16631,
+        "PRICE_ROW_COVERAGE_PCT": 100.0,
         "UNITS": 25104.0,
-        "UNITS_WITH_PRICE": 1051.0,
-        "PRICE_UNIT_COVERAGE_PCT": 4.19
+        "UNITS_WITH_PRICE": 25104.0,
+        "PRICE_UNIT_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_CATEGORY": "Cheese Crackers, Breadsticks & Dipping",
         "PURCHASE_ITEM_ROWS": 11342,
-        "ROWS_WITH_PRICE": 9488,
-        "PRICE_ROW_COVERAGE_PCT": 83.65,
+        "ROWS_WITH_PRICE": 11342,
+        "PRICE_ROW_COVERAGE_PCT": 100.0,
         "UNITS": 12759.0,
-        "UNITS_WITH_PRICE": 10817.0,
-        "PRICE_UNIT_COVERAGE_PCT": 84.78
+        "UNITS_WITH_PRICE": 12759.0,
+        "PRICE_UNIT_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_CATEGORY": "Cookies",
         "PURCHASE_ITEM_ROWS": 8078,
-        "ROWS_WITH_PRICE": 7219,
-        "PRICE_ROW_COVERAGE_PCT": 89.37,
+        "ROWS_WITH_PRICE": 8078,
+        "PRICE_ROW_COVERAGE_PCT": 100.0,
         "UNITS": 9133.0,
-        "UNITS_WITH_PRICE": 8230.0,
-        "PRICE_UNIT_COVERAGE_PCT": 90.11
+        "UNITS_WITH_PRICE": 9133.0,
+        "PRICE_UNIT_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_CATEGORY": "Chocolate & Sweet Spreads",
         "PURCHASE_ITEM_ROWS": 1269,
-        "ROWS_WITH_PRICE": 934,
-        "PRICE_ROW_COVERAGE_PCT": 73.6,
+        "ROWS_WITH_PRICE": 1269,
+        "PRICE_ROW_COVERAGE_PCT": 100.0,
         "UNITS": 1282.0,
-        "UNITS_WITH_PRICE": 940.0,
-        "PRICE_UNIT_COVERAGE_PCT": 73.32
+        "UNITS_WITH_PRICE": 1282.0,
+        "PRICE_UNIT_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_CATEGORY": "Toffee, Fudge & Nougat",
         "PURCHASE_ITEM_ROWS": 566,
-        "ROWS_WITH_PRICE": 278,
-        "PRICE_ROW_COVERAGE_PCT": 49.12,
+        "ROWS_WITH_PRICE": 566,
+        "PRICE_ROW_COVERAGE_PCT": 100.0,
         "UNITS": 859.0,
-        "UNITS_WITH_PRICE": 360.0,
-        "PRICE_UNIT_COVERAGE_PCT": 41.91
+        "UNITS_WITH_PRICE": 859.0,
+        "PRICE_UNIT_COVERAGE_PCT": 100.0
       }
     ]
   },
@@ -7627,16 +7650,16 @@
         "ITEM_NAME": "Tony’s Chocolonely Dark Milk Brownie Chocolate, 180 g",
         "UNITS": 47136.0,
         "PURCHASE_ITEM_ROWS": 29712,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 29712,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "e9c4aa9e65917445495602a4adc16675",
         "ITEM_NAME": "Funny-Frisch Kettle Chips Sweet Chilli & Red Pepper, 120 g",
         "UNITS": 41442.0,
         "PURCHASE_ITEM_ROWS": 31994,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 31994,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "2f605027e796b8c1d897c6100903c6d7",
@@ -7683,8 +7706,8 @@
         "ITEM_NAME": "Chio Dip Hot Cheese, 200 ml",
         "UNITS": 1942.0,
         "PURCHASE_ITEM_ROWS": 1854,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 1854,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "d3dffe73c943311024ef5b4b71e3f598",
@@ -7699,8 +7722,8 @@
         "ITEM_NAME": "Funny-Frisch Lentil Crisps Paprika Style, 90 g",
         "UNITS": 1708.0,
         "PURCHASE_ITEM_ROWS": 1632,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 1632,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "edb0f4aa63864fc9a85372d15cb65440",
@@ -7755,24 +7778,24 @@
         "ITEM_NAME": "Storck Mini Dickmann’s Chocolate Trio, (24 units), 200 g",
         "UNITS": 1415.0,
         "PURCHASE_ITEM_ROWS": 910,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 910,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "5d3969ae02b82a2e1f84457d03fedcab",
         "ITEM_NAME": "Ferrero Kinder Riegel Chocolate Bar, (18x21 g), 378 g",
         "UNITS": 1406.0,
         "PURCHASE_ITEM_ROWS": 937,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 937,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "64f36aa14d1921b5f20921a6fb8b8bc0",
         "ITEM_NAME": "Chio Tortillas Original Salted, 110 g",
         "UNITS": 1401.0,
         "PURCHASE_ITEM_ROWS": 1365,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 1365,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "782c2fdec7b604daefea9bf7b783a7bb",
@@ -7795,8 +7818,8 @@
         "ITEM_NAME": "Knoppers Crispy Wafer, (8x25 g), 200 g",
         "UNITS": 1362.0,
         "PURCHASE_ITEM_ROWS": 1108,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 1108,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "5dcef824f2fd5224744a86e4c7dd250d",
@@ -7867,16 +7890,16 @@
         "ITEM_NAME": "Pom-Bär Original, 75 g",
         "UNITS": 1131.0,
         "PURCHASE_ITEM_ROWS": 1105,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 1105,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "2247902fe615e4ad16d53af0070362da",
         "ITEM_NAME": "Ritter Sport Nut Class Whole Nut Chocolate, 100 g",
         "UNITS": 1128.0,
         "PURCHASE_ITEM_ROWS": 967,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 967,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "61d7a42ecec8482529b308f32ff598b1",
@@ -7923,8 +7946,8 @@
         "ITEM_NAME": "Veganz Lemon Cookie, Organic, 150 g",
         "UNITS": 903.0,
         "PURCHASE_ITEM_ROWS": 859,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 859,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "321127a76333fb0eceef367e946ce2cb",
@@ -7995,16 +8018,16 @@
         "ITEM_NAME": "Giotto Hazelnut Pastry, (4 bars), 154 g",
         "UNITS": 467.0,
         "PURCHASE_ITEM_ROWS": 260,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 260,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "b920b20ae65b43819f8696b2a6efcb21",
         "ITEM_NAME": "Ferrero Nutella Nut Nougat Cream, 750 g",
         "UNITS": 342.0,
         "PURCHASE_ITEM_ROWS": 335,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 335,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "9457e16e60a76e40ad486d39b0c4a8b1",
@@ -8083,16 +8106,8 @@
         "ITEM_NAME": "Storck Toffifee Caramel-Hazelnut Chocolates, (15 units), 125 g",
         "UNITS": 32.0,
         "PURCHASE_ITEM_ROWS": 28,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
-      },
-      {
-        "ITEM_KEY": "eb53c87b1ee83c0586a633daab87837f",
-        "ITEM_NAME": "Ferrero Kinder Bueno Chocolate Bar, (10x21,5 g), 215 g",
-        "UNITS": 27.0,
-        "PURCHASE_ITEM_ROWS": 15,
-        "ROWS_WITH_PRICE": 0,
-        "PRICE_ROW_COVERAGE_PCT": 0.0
+        "ROWS_WITH_PRICE": 28,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
       },
       {
         "ITEM_KEY": "6bbc265b0d9702985b61186ef2cec617",
@@ -8100,6 +8115,14 @@
         "UNITS": 27.0,
         "PURCHASE_ITEM_ROWS": 26,
         "ROWS_WITH_PRICE": 26,
+        "PRICE_ROW_COVERAGE_PCT": 100.0
+      },
+      {
+        "ITEM_KEY": "eb53c87b1ee83c0586a633daab87837f",
+        "ITEM_NAME": "Ferrero Kinder Bueno Chocolate Bar, (10x21,5 g), 215 g",
+        "UNITS": 27.0,
+        "PURCHASE_ITEM_ROWS": 15,
+        "ROWS_WITH_PRICE": 15,
         "PRICE_ROW_COVERAGE_PCT": 100.0
       }
     ]
@@ -8112,7 +8135,8 @@
     "important_interpretation_notes": [
       "First observed purchase in 2023 is not necessarily the customer's first-ever Wolt purchase.",
       "Rapid-repeat candidates are preserved in the analytical population and evaluated through sensitivity analysis.",
-      "Product/category performance should primarily use units, purchases and customers because product price coverage is materially incomplete.",
+      "Q1 vs Q4 category trends use the current category mapping so taxonomy changes are not mistaken for demand changes.",
+      "For duplicated item-log IDs with conflicting price variants, the positive base-price record is retained and item-level discounted values are reconciled to source basket values.",
       "Promotion comparisons are observational and should not be interpreted as causal acquisition effects."
     ]
   }

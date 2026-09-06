@@ -281,9 +281,8 @@ models:
 
       - name: unit_base_price
         description: >
-          Product base price valid at the time of purchase.
-          Null values are retained because source item history contains
-          genuine missing product_base_price values.
+          Positive product base price valid at the time of purchase after
+          resolving duplicated source log IDs with conflicting price variants.
 
       - name: currency
         description: Currency associated with the item price.
@@ -307,19 +306,17 @@ models:
         description: Promotion discount percentage, where applicable.
 
       - name: line_value_before_discount
-        description: >
-          Calculated item-line value before promotional discount where
-          source pricing is available.
+        description: Calculated item-line value before promotional discount.
 
       - name: calculated_line_value_after_discount
         description: >
-          Calculated item-line value after applying the identified promotion
-          where source pricing is available.
+          Calculated item-line value after applying the identified promotion,
+          preserving four decimal places for reconciliation to basket value.
 
       - name: has_price
         description: >
-          True when a historically valid product base price is available
-          for the purchased item.
+          True when a historically valid positive product base price is
+          available for the purchased item.
         data_tests:
           - not_null
           - accepted_values:
@@ -421,8 +418,8 @@ models:
 
       - name: product_base_price
         description: >
-          Product base price for this historical version.
-          Null values are preserved when the source data does not provide a price.
+          Positive product base price for this historical version after
+          resolving duplicated source log IDs with conflicting price variants.
 
       - name: currency
         description: Currency associated with the product price.

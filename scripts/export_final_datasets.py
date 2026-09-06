@@ -20,15 +20,23 @@ conn = snowflake.connector.connect(
 )
 
 
-datasets = [
+# All three analytical marts are kept as compressed extracts in the repo.
+repo_datasets = [
     "FCT_PURCHASES",
     "FCT_PURCHASE_ITEMS",
     "DIM_ITEM_VERSIONS",
 ]
 
+# The recruiter asked for two CSV/Google Sheet result files.
+# These two facts are exported additionally as normal CSV files for submission.
+submission_datasets = {
+    "FCT_PURCHASES",
+    "FCT_PURCHASE_ITEMS",
+}
+
 
 try:
-    for dataset in datasets:
+    for dataset in repo_datasets:
         print(f"Exporting {dataset}...")
 
         query = f"""
@@ -40,20 +48,36 @@ try:
 
         try:
             cursor.execute(query)
-
             df = cursor.fetch_pandas_all()
 
-            output_path = OUTPUT_DIR / f"{dataset.lower()}.csv.gz"
+            compressed_path = (
+                OUTPUT_DIR / f"{dataset.lower()}.csv.gz"
+            )
 
             df.to_csv(
-                output_path,
+                compressed_path,
                 index=False,
                 compression="gzip",
             )
 
             print(
-                f"Saved {len(df):,} rows to {output_path}"
+                f"Saved {len(df):,} rows to "
+                f"{compressed_path}"
             )
+
+            if dataset in submission_datasets:
+                csv_path = (
+                    OUTPUT_DIR / f"{dataset.lower()}.csv"
+                )
+
+                df.to_csv(
+                    csv_path,
+                    index=False,
+                )
+
+                print(
+                    f"Saved submission CSV to {csv_path}"
+                )
 
         finally:
             cursor.close()

@@ -17,6 +17,7 @@ Wolt Task 2 analysis outputs
 41_first_purchase_promo_monthly: 8 rows
 42_promo_products_on_first_purchase: 1 rows
 43_promo_types_on_first_purchase: 1 rows
+44_promo_first_followup: 1 rows
 50_overall_rapid_repeat_sensitivity: 2 rows
 51_category_rapid_repeat_sensitivity: 7 rows
 52_product_rapid_repeat_sensitivity: 60 rows

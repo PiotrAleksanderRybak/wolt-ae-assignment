@@ -38,7 +38,7 @@ select
         as wolt_service_fee,
     courier_base_fee::number(12, 2)
         as courier_base_fee,
-    total_basket_value::number(12, 2)
+    total_basket_value::number(12, 4)
         as total_basket_value,
     item_basket_description::varchar
         as item_basket_description_raw,

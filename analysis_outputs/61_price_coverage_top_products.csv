@@ -1,26 +1,26 @@
 ITEM_KEY,ITEM_NAME,UNITS,PURCHASE_ITEM_ROWS,ROWS_WITH_PRICE,PRICE_ROW_COVERAGE_PCT
-7aef490acb1ca55f113afe02977b9e8f,"Tony’s Chocolonely Dark Milk Brownie Chocolate, 180 g",47136,29712,0,0.00
-e9c4aa9e65917445495602a4adc16675,"Funny-Frisch Kettle Chips Sweet Chilli & Red Pepper, 120 g",41442,31994,0,0.00
+7aef490acb1ca55f113afe02977b9e8f,"Tony’s Chocolonely Dark Milk Brownie Chocolate, 180 g",47136,29712,29712,100.00
+e9c4aa9e65917445495602a4adc16675,"Funny-Frisch Kettle Chips Sweet Chilli & Red Pepper, 120 g",41442,31994,31994,100.00
 2f605027e796b8c1d897c6100903c6d7,"Fuego salsa dip, mild, 200 ml",8268,7081,7081,100.00
 7581487f9a0d33775d570f020b0e4141,"Yogurette Strawberry Yogurt Chocolate, 100 g",2817,2048,2048,100.00
 0e706671fbc1c66c6276653846b1c1ac,"Ferrero Kinder Country Chocolate Bar, (9x23,5 g), 211,5 g",2343,2092,2092,100.00
 0057c74ea984d23e711ccc0c0d224e5a,"Doritos Cheese Nachos, 110 g",2136,1971,1971,100.00
 a5e0be3a6e03f5ca59260103e58835d2,"Lay's Salt & Vinegar Crisps, 150 g",2014,1944,1944,100.00
-971c3d87aff5615604a3d1ef052d8cd9,"Chio Dip Hot Cheese, 200 ml",1942,1854,0,0.00
+971c3d87aff5615604a3d1ef052d8cd9,"Chio Dip Hot Cheese, 200 ml",1942,1854,1854,100.00
 d3dffe73c943311024ef5b4b71e3f598,"Lay's Crips herb butter flavour, 150 g",1811,1741,1741,100.00
-514473c47399dfac41b754ddf7fd5d94,"Funny-Frisch Lentil Crisps Paprika Style, 90 g",1708,1632,0,0.00
+514473c47399dfac41b754ddf7fd5d94,"Funny-Frisch Lentil Crisps Paprika Style, 90 g",1708,1632,1632,100.00
 edb0f4aa63864fc9a85372d15cb65440,Ja! Cookies American Style Chocolate Chip 225 g,1680,1365,1365,100.00
 13fe423f6a47156a00beee842eafc061,"Lorenz Naturals Rosemary Crisps, 95 g",1676,1622,1622,100.00
 e98605036c98cd2c57d3eaf01e1c49ad,"Ritter Sport Chocolate Wafer, 100 g",1675,923,923,100.00
 9b6c1ac419e38739c6276dcdb788bdcf,"Funny-Frisch Kettle Chips Salt & Vinegar, 120 g",1669,1608,1608,100.00
 0aec6d843c7bd4fd176e7f6376dfb0c8,"Funny-Frisch Riffels Natural, 150 g",1608,1499,1499,100.00
 7576ff6ee76ca4dfc28bf4fbaaf08465,"Ferrero Kinder Riegel Chocolate Bar, (10x21 g), 210 g",1474,1402,1402,100.00
-92d78ca20860dd50a1748fe2b0c8dc78,"Storck Mini Dickmann’s Chocolate Trio, (24 units), 200 g",1415,910,0,0.00
-5d3969ae02b82a2e1f84457d03fedcab,"Ferrero Kinder Riegel Chocolate Bar, (18x21 g), 378 g",1406,937,0,0.00
-64f36aa14d1921b5f20921a6fb8b8bc0,"Chio Tortillas Original Salted, 110 g",1401,1365,0,0.00
+92d78ca20860dd50a1748fe2b0c8dc78,"Storck Mini Dickmann’s Chocolate Trio, (24 units), 200 g",1415,910,910,100.00
+5d3969ae02b82a2e1f84457d03fedcab,"Ferrero Kinder Riegel Chocolate Bar, (18x21 g), 378 g",1406,937,937,100.00
+64f36aa14d1921b5f20921a6fb8b8bc0,"Chio Tortillas Original Salted, 110 g",1401,1365,1365,100.00
 782c2fdec7b604daefea9bf7b783a7bb,Crunchips Western Style Potato Chips 150 g,1397,1332,1332,100.00
 564b722b1d92225859390ea030ddd983,"Ferrero Kinder Bueno White Chocolate Bar, (6x19,5 g), 117 g",1383,1363,1363,100.00
-1d3842663f6e6e8ab20a245bc43b72a0,"Knoppers Crispy Wafer, (8x25 g), 200 g",1362,1108,0,0.00
+1d3842663f6e6e8ab20a245bc43b72a0,"Knoppers Crispy Wafer, (8x25 g), 200 g",1362,1108,1108,100.00
 5dcef824f2fd5224744a86e4c7dd250d,"Crunchips Cheese & Onion Crisps, 150 g",1344,1308,1308,100.00
 898f47cb5c754158245b1b236d3df7e6,"Fuego guacamole dip, 200 ml",1339,1292,1292,100.00
 dcc2ec0c38ed411a5d9295751328a464,"Pringles Sour Cream & Onion Chips, 165 g",1307,1244,1244,100.00
@@ -29,14 +29,14 @@ dcc2ec0c38ed411a5d9295751328a464,"Pringles Sour Cream & Onion Chips, 165 g",1307
 ec3986f69034113171d2dd2bac845401,"Fuego salsa dip, hot, 200 ml",1210,1115,1115,100.00
 b9c5d856f0380ca92e558a81c1a0c686,"Ritter Sport Honey-Salt-Almond Chocolate, 100 g",1208,1084,1084,100.00
 de2d83ff88ef56053a06b1e8686c5577,"Alnavit Chocolate Cookies, 125 g",1191,1096,1096,100.00
-2b8d65b915a044b3570fd7f8a3a7d065,"Pom-Bär Original, 75 g",1131,1105,0,0.00
-2247902fe615e4ad16d53af0070362da,"Ritter Sport Nut Class Whole Nut Chocolate, 100 g",1128,967,0,0.00
+2b8d65b915a044b3570fd7f8a3a7d065,"Pom-Bär Original, 75 g",1131,1105,1105,100.00
+2247902fe615e4ad16d53af0070362da,"Ritter Sport Nut Class Whole Nut Chocolate, 100 g",1128,967,967,100.00
 61d7a42ecec8482529b308f32ff598b1,"Hanuta Hazelnut Slice, (10x22 g), 220 g",1104,1057,1057,100.00
 07416ecd652da9d161c5113764ce6f90,"Takis Fuego, 100 g",1097,1064,1064,100.00
 bb8ba8e0cacb02d3fecb8478cf1be85c,"Reese’s Peanut Butter Cup Minis, 90 g",1018,909,909,100.00
 d3ed3888a55bdc5f34aacbf9877850e1,"Tony’s Chocolonely Milk Chocolate, 32%, 180 g",971,903,903,100.00
 4b8838c232ef24c3c33b0dcad972b672,"Ritter Sport Chocolate White Whole Nut, 100 g",965,913,913,100.00
-c8311a116507e87271bd16fb898a5164,"Veganz Lemon Cookie, Organic, 150 g",903,859,0,0.00
+c8311a116507e87271bd16fb898a5164,"Veganz Lemon Cookie, Organic, 150 g",903,859,859,100.00
 321127a76333fb0eceef367e946ce2cb,"Kinder Hippo Haselnuss, 5 Stück",855,804,804,100.00
 1b2aa51424dae1f208c314d58ae8e180,"Milka Schokolade Cookie Sensations Oreo Creme, 156 g",811,773,773,100.00
 e2c5b07e1f589fe7597d6f7318ea1838,"Griesson Soft Cake Orange, 300 g",641,596,596,100.00
@@ -45,8 +45,8 @@ f0dfa363e993b8632fc5bb35648ca825,"Ferrero Nutella Nut Nougat Cream, 450 g",638,6
 40604bd20ff58f587f4849ea3a6673ac,"Veganz Chocolate Cookie, Organic, 150 g",603,565,565,100.00
 184794567e769594406f10b6826d88e4,"Griesson Soft Cake biscuits, orange milk, 300 g",558,514,514,100.00
 b9ed451639de565e319543836d6bb64c,"Storck Super Dickmann’s Chocolate Kisses, (9x30 g), 270 g",555,380,380,100.00
-8848e81faf793f35004c01e760863f14,"Giotto Hazelnut Pastry, (4 bars), 154 g",467,260,0,0.00
-b920b20ae65b43819f8696b2a6efcb21,"Ferrero Nutella Nut Nougat Cream, 750 g",342,335,0,0.00
+8848e81faf793f35004c01e760863f14,"Giotto Hazelnut Pastry, (4 bars), 154 g",467,260,260,100.00
+b920b20ae65b43819f8696b2a6efcb21,"Ferrero Nutella Nut Nougat Cream, 750 g",342,335,335,100.00
 9457e16e60a76e40ad486d39b0c4a8b1,"Frigeo Crispy Puffed Rice, 80 g",301,260,260,100.00
 c8985169d2c82050e3f8ef7f73451c8d,"Storck Riesen Chocolate Toffees, 231 g",232,177,177,100.00
 2894f60b88078fb5b58fbf8dab0dbc63,"Ferrero Nutella & Go, 52 g",212,209,209,100.00
@@ -56,6 +56,6 @@ c8985169d2c82050e3f8ef7f73451c8d,"Storck Riesen Chocolate Toffees, 231 g",232,17
 cfda38a00b0aed7f3d0f2dc905553c83,"Rapunzel Bionella Vegan Organic Nut Nougat Cream, 400 g",57,56,56,100.00
 1d9d7fc4e965863acf0b3ad8ff8b3074,"Lisa's organic kettle chips sour cream & onion, 125 g",40,40,40,100.00
 008400fe0a12cc313b1b998c107cafea,Foodspring Protein Cream Hazelnut 200 g,33,33,33,100.00
-4cd94f965eb1982fdce03d81699b0838,"Storck Toffifee Caramel-Hazelnut Chocolates, (15 units), 125 g",32,28,0,0.00
-eb53c87b1ee83c0586a633daab87837f,"Ferrero Kinder Bueno Chocolate Bar, (10x21,5 g), 215 g",27,15,0,0.00
+4cd94f965eb1982fdce03d81699b0838,"Storck Toffifee Caramel-Hazelnut Chocolates, (15 units), 125 g",32,28,28,100.00
 6bbc265b0d9702985b61186ef2cec617,"Nestlé Choco Crossies Crunchy Balls Milk Chocolate, 200 g",27,26,26,100.00
+eb53c87b1ee83c0586a633daab87837f,"Ferrero Kinder Bueno Chocolate Bar, (10x21,5 g), 215 g",27,15,15,100.00

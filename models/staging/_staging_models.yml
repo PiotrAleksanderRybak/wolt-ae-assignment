@@ -3,8 +3,9 @@ version: 2
 models:
   - name: stg_item_logs
     description: >
-      Cleaned and deduplicated history of item changes. Each row represents
-      one logged version of an item.
+      Cleaned and deduplicated history of item changes. Duplicate LOG_ITEM_ID
+      variants are resolved by retaining the positive product-base-price record.
+      Each row represents one logged version of an item.
 
     columns:
       - name: log_item_id
@@ -30,7 +31,9 @@ models:
         description: Category assigned to the item.
 
       - name: product_base_price
-        description: Gross product price in EUR, including VAT.
+        description: >
+          Positive gross product price in EUR, including VAT, selected from
+          the valid price variant for the source log ID.
 
       - name: currency
         description: Currency extracted from the item payload.

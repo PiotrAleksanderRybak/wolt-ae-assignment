@@ -29,13 +29,13 @@ marts
 
 ### Staging
 
-The staging models mainly clean names/types and unpack the semi-structured source fields without adding much business logic.
+The staging models clean names/types, unpack the semi-structured fields and resolve a small number of source inconsistencies before business logic is added.
 
 - `stg_purchase_logs` - purchase-level data and the original basket JSON
 - `stg_item_logs` - item history, names, category, package attributes and price fields
 - `stg_promos` - promotion periods and discounts
 
-I kept the raw item payload in the staging layer because it was useful when checking missing prices and product-history changes.
+I keep the raw item payload in the staging layer because it is useful for validating product-history changes and the duplicate price variants described below.
 
 ### Intermediate
 
@@ -76,9 +76,9 @@ It contains 120,795 rows and includes:
 - purchase/customer identifiers
 - quantity
 - historically correct product attributes
-- historical base price where available
+- historical base price
 - promotion status and discount
-- calculated line values where price is available
+- calculated line values before and after promotion
 - customer-lifecycle fields inherited from the purchase
 - rapid-repeat diagnostics
 
@@ -88,7 +88,7 @@ Grain: one historical version of an item.
 
 The dimension contains 471 versions for 60 products. There is one current version per item.
 
-## A few source-data issues I handled explicitly
+## Source-data issues handled explicitly
 
 ### The purchase file is not actually limited to 2023
 
@@ -97,23 +97,29 @@ The assignment describes `purchase_logs` as 2023 purchases, but the supplied fil
 - 667 purchases from 2022
 - 3,382 purchases from 2024
 
-I left these rows in staging for traceability, but the final analytical marts only include purchases from 2023-01-01 (inclusive) to 2024-01-01 (exclusive).
+I leave these rows in staging for traceability, but the final analytical marts only include purchases from 2023-01-01 (inclusive) to 2024-01-01 (exclusive).
 
 There are also singular dbt tests that fail if an out-of-period record enters either final fact table.
+
+### Duplicate item-log IDs contain conflicting price variants
+
+The item source contains 648 rows but only 471 distinct `LOG_ITEM_ID` values. There are 177 duplicated log IDs.
+
+For those duplicated IDs, the payload is otherwise the same but the `product_base_price` differs. Each duplicated ID has exactly one positive price variant; the alternative is either null or negative. I therefore retain the positive-price variant when deduplicating `LOG_ITEM_ID`.
+
+After this rule, the item history has 471 unique versions and every 2023 purchase-item row has a historically valid positive base price. As a validation of the choice, the discounted item-level values reconcile to the source `TOTAL_BASKET_VALUE` for every 2023 purchase.
 
 ### Item attributes change over time
 
 One example I found while validating the model was Tony's Chocolonely Dark Milk Brownie. Its category changes from `Other Confectionary` to `Chocolate` during the year.
 
-For transaction-level analysis I therefore use the item version that was valid when the purchase happened. I did not overwrite historical purchases with the latest category or latest price.
+For transaction-level analysis I therefore use the item version that was valid when the purchase happened. I do not overwrite historical purchases with the latest category or latest price.
 
-### Price coverage is incomplete
+For the Q1-vs-Q4 category-growth comparison in Task 2, I intentionally use one current category per product. This prevents the mid-year taxonomy change from appearing as artificial category growth or decline.
 
-Price is genuinely missing in the source for some item versions. It is not a parsing issue.
+### Monetary precision
 
-At the 2023 purchase-item level, only 39.5% of rows have an available base price. The two highest-volume SKUs have no source base price at all.
-
-Because of this I keep missing prices as `NULL` and expose `has_price` rather than imputing a value. For product/category performance analysis I rely mainly on units, purchases and customers instead of pretending that item-level revenue is complete.
+The supplied `TOTAL_BASKET_VALUE` contains values with up to four decimal places because percentage discounts can produce sub-cent intermediate values. The staging model therefore preserves four decimal places for basket value and for calculated discounted item-line values.
 
 ### Rapid-repeat purchases
 
@@ -144,15 +150,16 @@ The available data is not sufficient to prove that the first purchase seen in 20
 
 ## Validation
 
-A few reconciliation checks I used while building the models:
+A few reconciliation checks used while building the models:
 
 - `fct_purchases`: 94,822 unique purchases, covering 2023-01-01 to 2023-12-31
 - `fct_purchase_items`: 120,795 rows and 120,795 distinct `purchase_item_key` values
 - `dim_item_versions`: 471 rows and 471 distinct `item_version_key` values
 - 2,001 distinct customers and exactly 2,001 first-observed purchases in the period
-- 2023 merchandise revenue in the mart reconciles to the 2023 source basket value: EUR 427,698.14
+- 2023 source basket value: EUR 427,691.4835
+- discounted item-level values reconcile to purchase basket value for every 2023 purchase
 
-The complete project currently builds successfully with `dbt build`.
+The complete project builds successfully with `dbt build`.
 
 ## Tests
 
@@ -165,6 +172,8 @@ The project uses dbt tests for, among other things:
 - customer-lifecycle fields
 - 2023 date boundaries
 - purchase-item grain
+- positive item prices after source deduplication
+- reconciliation of calculated item values to purchase basket value
 
 ## Running the project
 
@@ -188,15 +197,22 @@ Build all models and run the tests:
 dbt build
 ```
 
-Generate dbt documentation if needed:
+Run the Task 2 analysis and validation outputs:
 
 ```bash
-dbt docs generate
+python scripts/task2_analysis.py
+python scripts/task2_validation.py
+```
+
+Export the final datasets:
+
+```bash
+python scripts/export_final_datasets.py
 ```
 
 ## Exported outputs
 
-The repository includes compressed extracts of the three final analytical datasets:
+The repository keeps compressed extracts of the three final analytical datasets:
 
 ```text
 outputs/
@@ -205,7 +221,15 @@ outputs/
   dim_item_versions.csv.gz
 ```
 
-The export script is in `scripts/export_final_datasets.py`.
+The export script additionally creates two uncompressed files for the submission package:
+
+```text
+outputs/
+  fct_purchases.csv
+  fct_purchase_items.csv
+```
+
+The uncompressed submission extracts are ignored by Git and can be uploaded directly to the shared Drive folder.
 
 ## Why I structured it this way
 
@@ -215,8 +239,9 @@ The choices I considered most important were:
 
 1. keep purchase and purchase-item grains separate;
 2. resolve product attributes point-in-time;
-3. keep missing prices missing instead of inventing them;
-4. keep suspicious transactions visible and auditable rather than deleting them with a heuristic;
-5. be explicit about what the available customer history can and cannot tell us.
+3. resolve the duplicated price variants with a source rule that reconciles back to purchase totals;
+4. preserve source monetary precision;
+5. keep suspicious transactions visible and auditable rather than deleting them with a heuristic;
+6. be explicit about what the available customer history can and cannot tell us.
 
 That gives the business-facing models fairly simple semantics while keeping the assumptions visible in the dbt project.

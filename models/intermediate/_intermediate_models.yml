@@ -92,8 +92,8 @@ models:
 
       - name: unit_base_price
         description: >
-          Gross unit price applicable at the time of purchase. May be null
-          for 15 source items for which no price is available in any item version.
+          Positive gross unit price applicable at the time of purchase after
+          resolving duplicated source log IDs with conflicting price variants.
 
       - name: item_count
         description: Number of purchased units.

@@ -10,13 +10,30 @@ with source as (
 
 ),
 
+with_price_candidate as (
+
+    select
+        *,
+        payload_json:price_attributes[0].product_base_price::number(10, 2)
+            as source_product_base_price
+    from source
+
+),
+
 deduplicated as (
 
     select *
-    from source
+    from with_price_candidate
     qualify row_number() over (
         partition by log_item_id
-        order by time_log_created_utc desc, payload desc
+        order by
+            case
+                when source_product_base_price > 0 then 0
+                when source_product_base_price is null then 1
+                else 2
+            end,
+            time_log_created_utc desc,
+            payload desc
     ) = 1
 
 ),
