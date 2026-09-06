@@ -1,0 +1,62 @@
+HISTORICAL_ITEM_CATEGORY,ITEM_KEY,ITEM_NAME,Q1_UNITS,Q4_UNITS,Q1_PURCHASES,Q4_PURCHASES,Q1_CUSTOMERS,Q4_CUSTOMERS,UNITS_ABSOLUTE_CHANGE,UNITS_CHANGE_PCT
+Chocolate,7aef490acb1ca55f113afe02977b9e8f,"Tony’s Chocolonely Dark Milk Brownie Chocolate, 180 g",,15968,,9061.0,,1774.0,15968,
+Other Confectionary,7aef490acb1ca55f113afe02977b9e8f,"Tony’s Chocolonely Dark Milk Brownie Chocolate, 180 g",8874,,5897.0,,1460.0,,-8874,-100.00
+Crisp & Snacks,e9c4aa9e65917445495602a4adc16675,"Funny-Frisch Kettle Chips Sweet Chilli & Red Pepper, 120 g",8483,13033,6558.0,9834.0,1575.0,1851.0,4550,53.64
+"Cheese Crackers, Breadsticks & Dipping",2f605027e796b8c1d897c6100903c6d7,"Fuego salsa dip, mild, 200 ml",1597,2498,1353.0,2152.0,670.0,957.0,901,56.42
+Chocolate,7581487f9a0d33775d570f020b0e4141,"Yogurette Strawberry Yogurt Chocolate, 100 g",433,1275,353.0,849.0,184.0,342.0,842,194.46
+Crisp & Snacks,a5e0be3a6e03f5ca59260103e58835d2,"Lay's Salt & Vinegar Crisps, 150 g",350,754,331.0,721.0,200.0,411.0,404,115.43
+Crisp & Snacks,0057c74ea984d23e711ccc0c0d224e5a,"Doritos Cheese Nachos, 110 g",297,696,280.0,635.0,166.0,310.0,399,134.34
+Cookies,edb0f4aa63864fc9a85372d15cb65440,Ja! Cookies American Style Chocolate Chip 225 g,244,600,191.0,479.0,88.0,213.0,356,145.90
+"Cheese Crackers, Breadsticks & Dipping",971c3d87aff5615604a3d1ef052d8cd9,"Chio Dip Hot Cheese, 200 ml",368,701,337.0,681.0,230.0,420.0,333,90.49
+Other Confectionary,9457e16e60a76e40ad486d39b0c4a8b1,"Frigeo Crispy Puffed Rice, 80 g",,301,,260.0,,165.0,301,
+Crisp & Snacks,0aec6d843c7bd4fd176e7f6376dfb0c8,"Funny-Frisch Riffels Natural, 150 g",288,584,253.0,552.0,165.0,310.0,296,102.78
+Chocolate,bb8ba8e0cacb02d3fecb8478cf1be85c,"Reese’s Peanut Butter Cup Minis, 90 g",164,457,138.0,429.0,87.0,262.0,293,178.66
+Other Confectionary,92d78ca20860dd50a1748fe2b0c8dc78,"Storck Mini Dickmann’s Chocolate Trio, (24 units), 200 g",238,513,184.0,275.0,112.0,132.0,275,115.55
+Crisp & Snacks,514473c47399dfac41b754ddf7fd5d94,"Funny-Frisch Lentil Crisps Paprika Style, 90 g",269,532,254.0,514.0,161.0,302.0,263,97.77
+Chocolate,1d3842663f6e6e8ab20a245bc43b72a0,"Knoppers Crispy Wafer, (8x25 g), 200 g",184,442,155.0,338.0,116.0,169.0,258,140.22
+Crisp & Snacks,782c2fdec7b604daefea9bf7b783a7bb,Crunchips Western Style Potato Chips 150 g,237,478,230.0,448.0,137.0,250.0,241,101.69
+Chocolate,d3ed3888a55bdc5f34aacbf9877850e1,"Tony’s Chocolonely Milk Chocolate, 32%, 180 g",141,371,137.0,351.0,82.0,208.0,230,163.12
+Cookies,de2d83ff88ef56053a06b1e8686c5577,"Alnavit Chocolate Cookies, 125 g",220,450,186.0,408.0,116.0,230.0,230,104.55
+Chocolate,61d7a42ecec8482529b308f32ff598b1,"Hanuta Hazelnut Slice, (10x22 g), 220 g",209,436,198.0,429.0,109.0,250.0,227,108.61
+Crisp & Snacks,9b6c1ac419e38739c6276dcdb788bdcf,"Funny-Frisch Kettle Chips Salt & Vinegar, 120 g",351,538,328.0,531.0,185.0,286.0,187,53.28
+Cookies,8daf7c8493c249f143d4d72205f12405,"Nippon Häppchen puffed rice with milk chocolate, 200 g",168,353,134.0,275.0,89.0,152.0,185,110.12
+Chocolate,03b69ef76960b93651906fa51bb5d44c,"Cadbury Milk Caramel Chocolate, 180 g",257,430,183.0,301.0,96.0,126.0,173,67.32
+Chocolate,b9c5d856f0380ca92e558a81c1a0c686,"Ritter Sport Honey-Salt-Almond Chocolate, 100 g",255,416,229.0,393.0,131.0,213.0,161,63.14
+Chocolate,2247902fe615e4ad16d53af0070362da,"Ritter Sport Nut Class Whole Nut Chocolate, 100 g",253,412,228.0,325.0,103.0,176.0,159,62.85
+Crisp & Snacks,dcc2ec0c38ed411a5d9295751328a464,"Pringles Sour Cream & Onion Chips, 165 g",303,440,298.0,402.0,168.0,251.0,137,45.21
+"Cheese Crackers, Breadsticks & Dipping",898f47cb5c754158245b1b236d3df7e6,"Fuego guacamole dip, 200 ml",282,419,275.0,407.0,195.0,258.0,137,48.58
+Cookies,1b2aa51424dae1f208c314d58ae8e180,"Milka Schokolade Cookie Sensations Oreo Creme, 156 g",146,282,140.0,264.0,90.0,158.0,136,93.15
+Chocolate,e98605036c98cd2c57d3eaf01e1c49ad,"Ritter Sport Chocolate Wafer, 100 g",519,384,230.0,242.0,123.0,149.0,-135,-26.01
+Crisp & Snacks,d3dffe73c943311024ef5b4b71e3f598,"Lay's Crips herb butter flavour, 150 g",379,509,364.0,489.0,230.0,282.0,130,34.30
+Cookies,184794567e769594406f10b6826d88e4,"Griesson Soft Cake biscuits, orange milk, 300 g",98,223,90.0,203.0,62.0,102.0,125,127.55
+Crisp & Snacks,13fe423f6a47156a00beee842eafc061,"Lorenz Naturals Rosemary Crisps, 95 g",376,500,363.0,484.0,210.0,292.0,124,32.98
+Chocolate,0e706671fbc1c66c6276653846b1c1ac,"Ferrero Kinder Country Chocolate Bar, (9x23,5 g), 211,5 g",594,712,552.0,643.0,282.0,345.0,118,19.87
+Chocolate,564b722b1d92225859390ea030ddd983,"Ferrero Kinder Bueno White Chocolate Bar, (6x19,5 g), 117 g",348,458,336.0,453.0,188.0,259.0,110,31.61
+Cookies,c8311a116507e87271bd16fb898a5164,"Veganz Lemon Cookie, Organic, 150 g",147,256,139.0,243.0,84.0,137.0,109,74.15
+Cookies,32fb026b53f98d91ba7d1221358ee3ac,"Griesson Soft Cake biscuits, cherry, 300 g",61,164,61.0,152.0,51.0,93.0,103,168.85
+Crisp & Snacks,2b8d65b915a044b3570fd7f8a3a7d065,"Pom-Bär Original, 75 g",216,316,206.0,309.0,128.0,204.0,100,46.30
+Crisp & Snacks,07416ecd652da9d161c5113764ce6f90,"Takis Fuego, 100 g",252,351,237.0,347.0,134.0,211.0,99,39.29
+Crisp & Snacks,64f36aa14d1921b5f20921a6fb8b8bc0,"Chio Tortillas Original Salted, 110 g",343,440,337.0,427.0,226.0,236.0,97,28.28
+Cookies,321127a76333fb0eceef367e946ce2cb,"Kinder Hippo Haselnuss, 5 Stück",176,271,165.0,253.0,112.0,162.0,95,53.98
+Chocolate,5d3969ae02b82a2e1f84457d03fedcab,"Ferrero Kinder Riegel Chocolate Bar, (18x21 g), 378 g",309,391,200.0,282.0,100.0,135.0,82,26.54
+Chocolate & Sweet Spreads,f0dfa363e993b8632fc5bb35648ca825,"Ferrero Nutella Nut Nougat Cream, 450 g",123,204,122.0,204.0,86.0,138.0,81,65.85
+Other Confectionary,97cf2b65eb7bffb35913eaa9234cef6e,"Storck Dickmann’s Schoko Strolche Chocolate Kisses, (10 units), 83 g",22,94,14.0,25.0,9.0,15.0,72,327.27
+Cookies,e2c5b07e1f589fe7597d6f7318ea1838,"Griesson Soft Cake Orange, 300 g",142,206,129.0,192.0,74.0,120.0,64,45.07
+Crisp & Snacks,097ec47745d7c29c58ec58ff30db2c35,"Lay's Crisps Salted, 150 g",,63,,58.0,,49.0,63,
+"Toffee, Fudge & Nougat",8848e81faf793f35004c01e760863f14,"Giotto Hazelnut Pastry, (4 bars), 154 g",56,111,42.0,66.0,29.0,37.0,55,98.21
+Cookies,40604bd20ff58f587f4849ea3a6673ac,"Veganz Chocolate Cookie, Organic, 150 g",114,166,107.0,158.0,60.0,92.0,52,45.61
+Chocolate,7576ff6ee76ca4dfc28bf4fbaaf08465,"Ferrero Kinder Riegel Chocolate Bar, (10x21 g), 210 g",417,465,401.0,440.0,225.0,263.0,48,11.51
+Other Confectionary,b9ed451639de565e319543836d6bb64c,"Storck Super Dickmann’s Chocolate Kisses, (9x30 g), 270 g",108,154,77.0,113.0,53.0,69.0,46,42.59
+Chocolate & Sweet Spreads,2894f60b88078fb5b58fbf8dab0dbc63,"Ferrero Nutella & Go, 52 g",38,78,37.0,78.0,24.0,47.0,40,105.26
+Crisp & Snacks,1d9d7fc4e965863acf0b3ad8ff8b3074,"Lisa's organic kettle chips sour cream & onion, 125 g",,40,,40.0,,33.0,40,
+Crisp & Snacks,5dcef824f2fd5224744a86e4c7dd250d,"Crunchips Cheese & Onion Crisps, 150 g",308,344,304.0,331.0,166.0,202.0,36,11.69
+"Toffee, Fudge & Nougat",4cd94f965eb1982fdce03d81699b0838,"Storck Toffifee Caramel-Hazelnut Chocolates, (15 units), 125 g",,32,,28.0,,26.0,32,
+"Cheese Crackers, Breadsticks & Dipping",ec3986f69034113171d2dd2bac845401,"Fuego salsa dip, hot, 200 ml",325,353,283.0,336.0,174.0,222.0,28,8.62
+Chocolate,eb53c87b1ee83c0586a633daab87837f,"Ferrero Kinder Bueno Chocolate Bar, (10x21,5 g), 215 g",,27,,15.0,,10.0,27,
+"Toffee, Fudge & Nougat",c8985169d2c82050e3f8ef7f73451c8d,"Storck Riesen Chocolate Toffees, 231 g",57,79,46.0,52.0,34.0,30.0,22,38.60
+Chocolate & Sweet Spreads,cfda38a00b0aed7f3d0f2dc905553c83,"Rapunzel Bionella Vegan Organic Nut Nougat Cream, 400 g",6,24,6.0,23.0,6.0,12.0,18,300.00
+Chocolate,4b8838c232ef24c3c33b0dcad972b672,"Ritter Sport Chocolate White Whole Nut, 100 g",273,257,266.0,248.0,172.0,160.0,-16,-5.86
+Chocolate & Sweet Spreads,008400fe0a12cc313b1b998c107cafea,Foodspring Protein Cream Hazelnut 200 g,3,15,3.0,15.0,3.0,13.0,12,400.00
+Other Confectionary,6bbc265b0d9702985b61186ef2cec617,"Nestlé Choco Crossies Crunchy Balls Milk Chocolate, 200 g",5,13,5.0,13.0,5.0,7.0,8,160.00
+"Toffee, Fudge & Nougat",9f8bd236cf455c9fa6a5fb11146b9368,"Muh Muhs Original cream toffee, 215 g",32,40,26.0,33.0,22.0,19.0,8,25.00
+Chocolate & Sweet Spreads,b920b20ae65b43819f8696b2a6efcb21,"Ferrero Nutella Nut Nougat Cream, 750 g",92,99,90.0,96.0,50.0,53.0,7,7.61

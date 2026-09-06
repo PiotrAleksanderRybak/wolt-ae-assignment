@@ -1,831 +1,222 @@
 # Wolt Analytics Engineering Assignment
 
-## Overview
+This repository contains my solution to the Wolt Analytics Engineering take-home assignment.
 
-This dbt project transforms raw Wolt snack purchase, item-log, and promotion data into analytics-ready dimensional models for business analysis.
+I used dbt on Snowflake to turn the three supplied sources (`purchase_logs`, `item_logs` and `promos`) into a small analytical model that can be used for both purchase-level and product-level analysis.
 
-The resulting datasets support questions such as:
+The main outputs are:
 
-* What products are customers purchasing?
-* Which products and categories drive sales?
-* What prices are products going for over time?
-* How often are products purchased on promotion?
-* Which customers use promotions?
-* Are customers coming back?
-* How do Wolt fees compare with basket value?
-* How does revenue evolve over time?
-* How do courier costs evolve over time?
-* How robust are business conclusions to potential source-data anomalies?
+- `fct_purchases` - one row per purchase
+- `fct_purchase_items` - one row per basket position
+- `dim_item_versions` - historical product versions
 
-The project is built with **dbt** and runs on **Snowflake**.
+The final analytical period is 2023, in line with the assignment description.
 
----
-
-## Project Structure
-
-The transformation follows three logical layers:
+## Project layout
 
 ```text
 sources
-   |
-   v
+  |
+  v
 staging
-   |
-   v
+  |
+  v
 intermediate
-   |
-   v
+  |
+  v
 marts
 ```
 
-The final analytics layer contains two fact tables and one historical product dimension:
+### Staging
 
-```text
-fct_purchases
-fct_purchase_items
-dim_item_versions
-```
+The staging models mainly clean names/types and unpack the semi-structured source fields without adding much business logic.
 
----
+- `stg_purchase_logs` - purchase-level data and the original basket JSON
+- `stg_item_logs` - item history, names, category, package attributes and price fields
+- `stg_promos` - promotion periods and discounts
 
-## Staging Models
+I kept the raw item payload in the staging layer because it was useful when checking missing prices and product-history changes.
 
-### `stg_purchase_logs`
+### Intermediate
 
-Standardizes purchase-level source data, including:
+`int_purchase_items` explodes each basket into individual item positions.
 
-* purchase and customer identifiers
-* purchase timestamp
-* basket value
-* Wolt service fee
-* courier base fee
-* delivery distance
-* nested basket contents
+`int_item_versions` turns the item log into validity intervals (`valid_from_utc` / `valid_to_utc`). This is important because names, categories and prices can change over time.
 
-The staging layer preserves the supplied source population, including records outside the declared 2023 analysis period, for traceability and data-quality investigation.
+`int_purchase_items_enriched` joins each purchased item to the item version that was valid at the purchase timestamp, then adds the applicable promotion.
 
-### `stg_item_logs`
+`int_purchases_classified` adds two pieces of logic that I wanted to keep separate from the final facts:
 
-Parses and standardizes item-log payloads, including:
+- customer purchase order within the observed 2023 period
+- diagnostic flags for suspicious rapid-repeat purchases
 
-* item identifier
-* multilingual product names
-* brand
-* category
-* package size
-* base price
-* currency
-* VAT
-
-The raw JSON payload is retained for traceability.
-
-### `stg_promos`
-
-Standardizes promotion attributes, including:
-
-* item identifier
-* promotion start and end date
-* promotion type
-* discount percentage
-
----
-
-## Intermediate Models
-
-### `int_purchase_items`
-
-Explodes the nested item basket from each purchase into a purchase-item grain.
-
-**Grain:** one row per item position within a purchase.
-
-This provides the bridge between purchase-level transactions and product-level analysis.
-
-### `int_item_versions`
-
-Creates historical versions of products from the item log.
-
-Each product version receives:
-
-* `item_version_key`
-* `item_version_number`
-* `valid_from_utc`
-* `valid_to_utc`
-* `is_current`
-
-This allows downstream models to resolve product attributes as they were known at the time a purchase occurred rather than retrospectively applying the latest product attributes.
-
-### `int_purchase_items_enriched`
-
-Enriches purchase items with:
-
-* historically correct product version
-* item name
-* brand
-* category
-* historical product price
-* VAT and currency
-* applicable promotion
-* discount percentage
-* calculated line value before discount
-* calculated line value after discount
-
-The temporal join uses the purchase timestamp to select the product version that was valid at the time of the transaction.
-
-### `int_purchases_classified`
-
-Defines the purchase population used by the final analytical marts and adds customer-lifecycle and data-quality diagnostics.
-
-The analytical population is restricted to:
-
-```text
-2023-01-01 00:00:00 inclusive
-to
-2024-01-01 00:00:00 exclusive
-```
-
-The model also adds customer-purchase lifecycle fields:
-
-* `customer_purchase_number_in_period`
-* `previous_customer_purchase_time_utc`
-* `is_first_observed_purchase_in_period`
-* `is_repeat_purchase_in_period`
-* `days_since_previous_purchase`
-
-The wording **first observed purchase in period** is intentional.
-
-Because the available analytical population is limited to 2023, the project does not assume that a customer's first observed purchase in this dataset is necessarily their first-ever purchase with Wolt.
-
-The model also adds rapid-repeat diagnostic fields:
-
-* `is_in_rapid_repeat_group`
-* `is_rapid_repeat_candidate`
-* `seconds_since_matching_purchase`
-* `rapid_repeat_sequence_number`
-* `rapid_repeat_group_size`
-
-No purchases within the defined 2023 analytical population are removed based on the rapid-repeat heuristic.
-
----
-
-# Analytics Marts
-
-## `fct_purchases`
-
-**Grain:** one row per completed purchase in the 2023 analysis period.
-
-The model contains:
-
-* purchase and customer identifiers
-* order timestamp
-* order date and month
-* customer purchase number
-* first-observed / repeat-purchase classification
-* time since previous customer purchase
-* delivery distance
-* merchandise revenue
-* service fee revenue
-* gross order revenue
-* courier cost
-* revenue less courier cost
-* service-fee-to-basket ratio
-* courier-cost-to-basket ratio
-* rapid-repeat diagnostics
-
-Current row count:
-
-```text
-94,822 purchases
-```
-
-The model can directly support questions about:
-
-* revenue
-* courier costs
-* Wolt fees
-* delivery distance
-* purchase frequency
-* repeat behavior
-* first observed purchases
-* suspicious rapid-repeat activity
-
----
-
-## `fct_purchase_items`
-
-**Grain:** one row per item position within a completed purchase in the 2023 analysis period.
-
-The model contains:
-
-* purchase and customer identifiers
-* order date and month
-* customer lifecycle fields
-* item identifier and basket position
-* quantity
-* historically correct product version
-* item name
-* brand
-* category
-* package information
-* historical base price
-* currency and VAT
-* promotion attributes
-* calculated line values
-* price-availability flag
-* rapid-repeat diagnostics inherited from the purchase
-
-Current row count:
-
-```text
-120,795 purchase-item rows
-```
-
-This model supports product, category, price, promotion and customer-behavior analysis without requiring analysts to reconstruct historical joins themselves.
-
----
-
-## `dim_item_versions`
-
-**Grain:** one row per historical version of an item.
-
-The dimension contains:
-
-* `item_version_key`
-* `item_key`
-* version number
-* validity interval
-* current-version flag
-* historical item name
-* historical brand
-* historical category
-* package information
-* product base price
-* currency
-* VAT
-
-Current dimension size:
-
-```text
-Historical versions: 471
-Distinct items:        60
-Current versions:      60
-Versions without price: 108
-```
-
-There is exactly one current version per item.
-
----
-
-# Temporal Product Modeling
-
-Product attributes can change over time.
-
-A purchase should therefore not automatically inherit the latest known version of a product.
-
-`int_item_versions` converts the supplied item log into historical validity intervals.
-
-Purchase items are then matched to the product version valid at:
-
-```text
-time_order_received_utc
-```
-
-This preserves historical changes such as:
-
-* item-name changes
-* category changes
-* price changes
-* package changes
-* other product-attribute changes
-
-For example, the same product can legitimately appear under different historical categories in downstream analysis if its source category changed over time.
-
-This approach avoids historical restatement caused by joining transactions only to the latest product record.
-
----
-
-# Promotion Logic
-
-Promotions are matched using:
-
-* `item_key`
-* purchase date
-* promotion start date
-* promotion end date
-
-For percentage discounts, an expected discounted line value is calculated using the historically valid item base price and purchased quantity.
-
-Where the source does not provide a product price, price-derived measures remain `NULL` rather than being imputed.
-
----
-
-# Analysis-Period Contract
-
-The assignment describes `purchase_logs` as containing completed and delivered purchases occurring during 2023.
-
-However, inspection of the supplied source data identified purchases outside that period.
-
-The source contains:
-
-```text
-2022:     667 purchases
-2023:  94,822 purchases
-2024:   3,382 purchases
-----------------------
-Total: 98,871 purchases
-```
-
-The out-of-period records represent:
-
-```text
-4,049 purchases
-4.10% of the supplied purchase rows
-```
-
-Their basket value is:
-
-```text
-EUR 17,735.77
-```
-
-The 2023 population contains:
-
-```text
-EUR 427,698.14
-```
-
-of merchandise basket value.
-
-## Modeling decision
-
-The out-of-period records are preserved in the staging layer for traceability.
-
-The final analytical purchase population is restricted to the period defined by the assignment:
-
-```sql
-time_order_received_utc >= '2023-01-01'
-and time_order_received_utc < '2024-01-01'
-```
-
-This ensures that standard queries against the final marts return metrics corresponding to the requested 2023 analysis period.
-
-Explicit dbt tests also verify that records outside 2023 cannot enter the final purchase marts.
-
----
-
-# Customer Lifecycle Modeling
-
-Customer purchase order is calculated within the 2023 analysis period.
-
-Observed results are:
-
-```text
-Customers:                         2,001
-First observed purchases:          2,001
-Repeat purchases:                 92,821
-Total purchases:                  94,822
-Maximum purchases by one customer:   272
-```
-
-Each customer therefore has exactly one purchase classified as:
-
-```text
-is_first_observed_purchase_in_period = true
-```
-
-All subsequent purchases for that customer within the analytical period are classified as repeat purchases.
-
-This enables simple analysis of:
-
-* first observed vs repeat purchases
-* customer purchase frequency
-* time between purchases
-* product mix of first observed vs repeat purchases
-* customer retention patterns within the observed period
-
-The model deliberately does not label these customers as definitively **new to Wolt**, because purchase history before the available analysis period is not sufficient to establish that.
-
----
-
-# Data Quality Findings
-
-## Missing Product Prices
-
-Some item-log payloads explicitly contain:
-
-```text
-product_base_price = null
-```
-
-The missing values therefore originate in the supplied source data rather than from the transformation logic.
-
-At historical item-version level:
-
-```text
-Total item versions:         471
-Versions without price:      108
-Versions with price:         363
-Missing-price share:       22.93%
-```
-
-Missing source prices are preserved as `NULL`.
-
-No price imputation is performed because there is no authoritative basis for estimating the missing values.
-
-`fct_purchase_items.has_price` allows analysts to explicitly control for price availability when calculating price-based metrics.
-
-This avoids silently turning missing source information into assumed business data.
-
----
-
-# Rapid Repeat Purchases
-
-## Observation
-
-A material population of purchases has:
-
-* a different `purchase_key`
-* the same customer
-* identical basket contents
-* identical basket value
-* identical service fee
-* identical courier fee
-* identical delivery distance
-* a timestamp very close to another matching purchase
-
-These patterns may represent duplicates, but the supplied data does not contain enough transaction-semantic information to prove that they are duplicates.
-
-## Detection logic
-
-Rapid-repeat matching uses:
-
-* customer
-* basket contents
-* basket value
-* Wolt service fee
-* courier fee
-* delivery distance
-
-The basket is represented by a deterministic basket signature.
-
-When another matching purchase follows within five minutes, the subsequent purchase is flagged as:
-
-```text
-is_rapid_repeat_candidate = true
-```
-
-The first purchase in the sequence is retained as the initial transaction.
-
-The five-minute threshold is an **anomaly-detection threshold**, not a business definition of a duplicate transaction.
-
-Within the final 2023 analysis population:
-
-```text
-Total purchases:             94,822
-Rapid-repeat candidates:      8,399
-Candidate share:               8.86%
-```
-
-The pattern is therefore material enough to warrant explicit visibility in the analytical model.
-
----
-
-# Decision on Potential Duplicates
-
-I intentionally **did not deduplicate rapid-repeat purchases in the analytical fact tables**.
-
-This decision is based on the semantics of the supplied source data.
-
-The purchase source describes the records as completed and delivered purchases with payment in advance, and each record has a distinct `purchase_key`.
-
-The available fields do not provide sufficient evidence to determine whether a rapid repeat represents:
-
-* an accidental technical retry
-* a duplicate checkout request
-* two separately created and paid orders
-* legitimate repeated purchases
-* a customer intentionally placing multiple identical orders
-* promotion or quantity-limit behavior
-* another upstream process
-
-Automatically deleting records based only on similarity and temporal proximity would introduce an unsupported business assumption into the analytical model.
-
-For example, defining:
-
-```text
-119 seconds = duplicate
-121 seconds = legitimate purchase
-```
-
-would not have a defensible transaction-level basis.
-
-The project therefore follows a **preserve + flag + quantify** approach:
-
-1. Preserve every purchase in the defined analytical population.
-2. Flag suspicious rapid-repeat patterns.
-3. Expose the diagnostic fields in the analytical marts.
-4. Allow downstream sensitivity analysis.
-5. Avoid silently changing revenue or order counts without an authoritative transaction-level rule.
-
----
-
-# Sensitivity Analysis
-
-Rapid-repeat candidates are retained in the analytical source of truth.
-
-Analysts can perform sensitivity analysis by comparing results from:
-
-```sql
-select *
-from {{ ref('fct_purchases') }}
-```
-
-with results excluding candidates:
-
-```sql
-select *
-from {{ ref('fct_purchases') }}
-where not is_rapid_repeat_candidate
-```
-
-The same diagnostic fields are propagated to `fct_purchase_items`, allowing product-level conclusions to be tested using the same approach.
-
-The final 2023 population contains 8,399 rapid-repeat candidates, representing 8.86% of purchases.
-
-Revenue, units and product-level sensitivity should therefore be explicitly considered when drawing major business conclusions from the dataset.
-
----
-
-# What I Would Do in a Production Environment
-
-In a real Wolt data environment, I would not create a permanent deduplication rule from the available fields alone.
-
-I would first investigate the upstream transaction lifecycle and request additional identifiers and statuses such as:
-
-* payment transaction ID
-* checkout or session ID
-* request or idempotency key
-* delivery ID
-* order creation event ID
-* payment status
-* cancellation status
-* refund status
-
-These fields would allow rapid repeats to be classified using transaction semantics instead of behavioral heuristics.
-
-For example:
-
-* the same payment transaction associated with multiple purchase records could provide strong evidence of technical duplication
-* separate successful payments and separate deliveries would indicate distinct economic transactions
-* a second order followed by a refund would require different revenue treatment
-
-Only after validating the behavior with the source-system owner would I introduce an official deduplication rule into the production analytical layer.
-
-Until that information is available, preserving the records while exposing anomaly flags keeps the analytical model auditable and flexible.
-
----
-
-# Validation and Reconciliation
-
-## Purchase Fact
-
-The final purchase fact contains:
-
-```text
-Total purchases:    94,822
-Unique customers:    2,001
-First date:     2023-01-01
-Last date:      2023-12-31
-```
-
-Merchandise revenue reconciles to the 2023 source population:
-
-```text
-Source 2023 basket value:      EUR 427,698.14
-Mart merchandise revenue:      EUR 427,698.14
-Aggregate difference:          EUR       0.00
-```
-
----
-
-## Purchase-Item Grain
-
-`fct_purchase_items` contains:
-
-```text
-Total rows:                     120,795
-Distinct purchase_item_key:     120,795
-Missing purchase classification:      0
-First date:                  2023-01-01
-Last date:                   2023-12-31
-```
-
-The equality between row count and distinct `purchase_item_key` confirms the intended one-row-per-basket-position grain.
-
----
-
-## Customer Lifecycle Reconciliation
-
-`fct_purchases` contains:
-
-```text
-First observed purchases:  2,001
-Repeat purchases:         92,821
-Total:                    94,822
-```
-
-The number of first observed purchases exactly equals the number of distinct customers.
-
-At purchase-item level:
-
-```text
-Purchase-item rows:                   120,795
-Rows from first observed purchases:     2,550
-Rows from repeat purchases:            118,245
-Missing purchase-number classification:      0
-```
-
----
-
-## Item-Version Dimension
-
-`dim_item_versions` contains:
-
-```text
-Versions:               471
-Unique version keys:    471
-Distinct items:          60
-Current versions:        60
-Versions without price: 108
-```
-
-The number of current versions equals the number of distinct items.
-
----
-
-# Data Tests
-
-The project includes dbt tests covering:
-
-* primary-key uniqueness
-* required-field completeness
-* model relationships
-* accepted boolean values
-* source-to-intermediate integrity
-* intermediate-to-mart integrity
-* purchase-item grain
-* rapid-repeat classification fields
-* customer-lifecycle fields
-* 2023 analysis-period boundaries
-
-Two explicit singular tests ensure that purchases outside the defined analysis period cannot enter the final marts:
-
-```text
-tests/assert_fct_purchases_2023.sql
-tests/assert_fct_purchase_items_2023.sql
-```
-
-The complete project builds successfully using:
-
-```bash
-dbt build
-```
-
----
-
-# Final Analytical Datasets
-
-The principal datasets intended for analytics consumption are:
+## Final models
 
 ### `fct_purchases`
 
-Use for:
+Grain: one completed purchase in 2023.
 
-* orders
-* customers
-* revenue
-* Wolt fees
-* courier costs
-* delivery distance
-* repeat behavior
-* customer purchase frequency
+It contains 94,822 rows and includes:
+
+- customer and purchase identifiers
+- order date/month
+- delivery distance
+- basket value, Wolt service fee and courier cost
+- derived revenue/cost metrics
+- purchase number within the observed period
+- first-observed / repeat-purchase flags
+- rapid-repeat diagnostics
 
 ### `fct_purchase_items`
 
-Use for:
+Grain: one basket position within a purchase.
 
-* products
-* categories
-* units
-* prices
-* promotions
-* product mix
-* product/customer behavior
+It contains 120,795 rows and includes:
+
+- purchase/customer identifiers
+- quantity
+- historically correct product attributes
+- historical base price where available
+- promotion status and discount
+- calculated line values where price is available
+- customer-lifecycle fields inherited from the purchase
+- rapid-repeat diagnostics
 
 ### `dim_item_versions`
 
-Use for:
+Grain: one historical version of an item.
 
-* historical product attributes
-* historical product prices
-* historical categories
-* version-level product investigation
+The dimension contains 471 versions for 60 products. There is one current version per item.
 
-Together, these models provide the dimensional analytical layer requested in the assignment.
+## A few source-data issues I handled explicitly
 
----
+### The purchase file is not actually limited to 2023
 
-# Running the Project
+The assignment describes `purchase_logs` as 2023 purchases, but the supplied file also contains:
 
-## Environment
+- 667 purchases from 2022
+- 3,382 purchases from 2024
 
-The project uses:
+I left these rows in staging for traceability, but the final analytical marts only include purchases from 2023-01-01 (inclusive) to 2024-01-01 (exclusive).
 
-```text
-dbt-snowflake==1.11.6
-```
+There are also singular dbt tests that fail if an out-of-period record enters either final fact table.
 
-Install the Python dependency from the repository root:
+### Item attributes change over time
+
+One example I found while validating the model was Tony's Chocolonely Dark Milk Brownie. Its category changes from `Other Confectionary` to `Chocolate` during the year.
+
+For transaction-level analysis I therefore use the item version that was valid when the purchase happened. I did not overwrite historical purchases with the latest category or latest price.
+
+### Price coverage is incomplete
+
+Price is genuinely missing in the source for some item versions. It is not a parsing issue.
+
+At the 2023 purchase-item level, only 39.5% of rows have an available base price. The two highest-volume SKUs have no source base price at all.
+
+Because of this I keep missing prices as `NULL` and expose `has_price` rather than imputing a value. For product/category performance analysis I rely mainly on units, purchases and customers instead of pretending that item-level revenue is complete.
+
+### Rapid-repeat purchases
+
+I found a non-trivial number of purchases with a different `purchase_key` but the same customer, basket, basket value, service fee, courier fee and delivery distance very close together in time.
+
+Using a five-minute detection window, 8,399 purchases (8.86% of the 2023 population) are flagged as rapid-repeat candidates.
+
+I did **not** remove them.
+
+The source describes each row as a completed/delivered purchase and does not provide payment transaction IDs, checkout IDs, idempotency keys, delivery IDs or refund/cancellation status. Without that information I do not think a time threshold alone is enough to call a transaction a duplicate.
+
+Instead, the facts keep the purchases and expose the flags so that important results can be checked both with and without the candidate population.
+
+In a production setting I would investigate this with the upstream owner before defining a permanent deduplication rule.
+
+### "First observed" is not necessarily "new customer"
+
+The customer-lifecycle fields are calculated within the 2023 analytical period.
+
+For that reason the model uses names such as:
+
+- `is_first_observed_purchase_in_period`
+- `customer_purchase_number_in_period`
+
+rather than `is_new_customer`.
+
+The available data is not sufficient to prove that the first purchase seen in 2023 is the customer's first-ever Wolt purchase.
+
+## Validation
+
+A few reconciliation checks I used while building the models:
+
+- `fct_purchases`: 94,822 unique purchases, covering 2023-01-01 to 2023-12-31
+- `fct_purchase_items`: 120,795 rows and 120,795 distinct `purchase_item_key` values
+- `dim_item_versions`: 471 rows and 471 distinct `item_version_key` values
+- 2,001 distinct customers and exactly 2,001 first-observed purchases in the period
+- 2023 merchandise revenue in the mart reconciles to the 2023 source basket value: EUR 427,698.14
+
+The complete project currently builds successfully with `dbt build`.
+
+## Tests
+
+The project uses dbt tests for, among other things:
+
+- unique keys
+- required fields
+- relationships between facts/intermediate models
+- accepted boolean values
+- customer-lifecycle fields
+- 2023 date boundaries
+- purchase-item grain
+
+## Running the project
+
+Install the Python dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Validate the connection
+The Snowflake password is read from the `SNOWFLAKE_PASSWORD` environment variable and is not stored in this repository.
+
+Check the connection:
 
 ```bash
 dbt debug
 ```
 
-## Build the full project
+Build all models and run the tests:
 
 ```bash
 dbt build
 ```
 
-## Run the final analytical datasets
-
-```bash
-dbt run --select fct_purchases fct_purchase_items dim_item_versions
-```
-
-## Run tests for the final analytical layer
-
-```bash
-dbt test --select fct_purchases fct_purchase_items dim_item_versions
-```
-
-## Generate dbt documentation
+Generate dbt documentation if needed:
 
 ```bash
 dbt docs generate
 ```
 
----
+## Exported outputs
 
-# Credentials
-
-Snowflake credentials are not stored in the project repository.
-
-The Snowflake password is provided through the environment variable:
+The repository includes compressed extracts of the three final analytical datasets:
 
 ```text
-SNOWFLAKE_PASSWORD
+outputs/
+  fct_purchases.csv.gz
+  fct_purchase_items.csv.gz
+  dim_item_versions.csv.gz
 ```
 
-The local dbt profile references the environment variable using:
+The export script is in `scripts/export_final_datasets.py`.
 
-```text
-{{ env_var('SNOWFLAKE_PASSWORD') }}
-```
+## Why I structured it this way
 
-This keeps credentials outside version control.
+The main goal was to keep the analytical layer easy to query without hiding uncertainty in the source data.
 
----
+The choices I considered most important were:
 
-# Key Modeling Decisions
+1. keep purchase and purchase-item grains separate;
+2. resolve product attributes point-in-time;
+3. keep missing prices missing instead of inventing them;
+4. keep suspicious transactions visible and auditable rather than deleting them with a heuristic;
+5. be explicit about what the available customer history can and cannot tell us.
 
-The principal design decisions in this project are:
-
-1. Separate purchase-level and purchase-item-level fact tables with explicit grains.
-
-2. Expose historical item versions as a reusable dimension.
-
-3. Resolve product attributes point-in-time rather than retrospectively applying the latest state.
-
-4. Match promotions to the date of purchase.
-
-5. Preserve missing source prices rather than imputing unsupported values.
-
-6. Keep the staging layer traceable to the supplied source data.
-
-7. Restrict the final analytical population to the 2023 period defined by the assignment.
-
-8. Explicitly distinguish first observed purchase in the analysis period from a customer's first-ever purchase.
-
-9. Preserve suspected rapid-repeat purchases rather than applying an unsupported deduplication heuristic.
-
-10. Expose rapid-repeat diagnostic fields for downstream sensitivity analysis.
-
-11. Reconcile final financial metrics to the corresponding source population.
-
-12. Keep material data-quality findings, assumptions and business limitations explicit and auditable.
+That gives the business-facing models fairly simple semantics while keeping the assumptions visible in the dbt project.

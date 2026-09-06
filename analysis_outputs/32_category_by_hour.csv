@@ -1,0 +1,158 @@
+ORDER_HOUR,ITEM_CATEGORY,UNITS,PURCHASES,CUSTOMERS
+0,Chocolate,18,9,9
+0,Crisp & Snacks,17,10,10
+0,Other Confectionary,14,6,6
+0,Cookies,2,2,2
+0,"Cheese Crackers, Breadsticks & Dipping",2,2,2
+0,Chocolate & Sweet Spreads,1,1,1
+1,Crisp & Snacks,7,6,5
+1,Chocolate,5,4,4
+1,Other Confectionary,4,3,3
+1,Cookies,2,2,2
+1,"Cheese Crackers, Breadsticks & Dipping",1,1,1
+2,Crisp & Snacks,21,14,10
+2,Chocolate,18,11,10
+2,Other Confectionary,13,7,6
+2,Cookies,9,6,6
+2,Chocolate & Sweet Spreads,3,3,2
+2,"Cheese Crackers, Breadsticks & Dipping",1,1,1
+3,Crisp & Snacks,33,17,11
+3,Other Confectionary,12,7,5
+3,Chocolate,11,7,7
+3,"Cheese Crackers, Breadsticks & Dipping",4,4,4
+3,Cookies,1,1,1
+4,Crisp & Snacks,41,22,19
+4,Chocolate,26,9,7
+4,Other Confectionary,22,15,11
+4,Cookies,8,8,7
+4,"Cheese Crackers, Breadsticks & Dipping",6,4,4
+5,Crisp & Snacks,133,88,66
+5,Chocolate,108,71,50
+5,Other Confectionary,68,42,31
+5,Cookies,51,37,32
+5,"Cheese Crackers, Breadsticks & Dipping",10,10,10
+5,Chocolate & Sweet Spreads,5,5,5
+5,"Toffee, Fudge & Nougat",1,1,1
+6,Crisp & Snacks,499,339,233
+6,Chocolate,445,256,172
+6,Other Confectionary,253,161,100
+6,Cookies,140,116,83
+6,"Cheese Crackers, Breadsticks & Dipping",92,75,68
+6,Chocolate & Sweet Spreads,19,19,17
+6,"Toffee, Fudge & Nougat",17,13,7
+7,Crisp & Snacks,957,651,429
+7,Chocolate,786,467,316
+7,Other Confectionary,470,285,192
+7,"Cheese Crackers, Breadsticks & Dipping",236,159,130
+7,Cookies,225,189,152
+7,Chocolate & Sweet Spreads,58,56,43
+7,"Toffee, Fudge & Nougat",16,11,9
+8,Crisp & Snacks,1575,1131,650
+8,Chocolate,1336,768,474
+8,Other Confectionary,742,441,299
+8,Cookies,335,258,181
+8,"Cheese Crackers, Breadsticks & Dipping",303,236,189
+8,Chocolate & Sweet Spreads,87,86,60
+8,"Toffee, Fudge & Nougat",10,9,8
+9,Crisp & Snacks,2039,1482,846
+9,Chocolate,1770,986,580
+9,Other Confectionary,924,579,379
+9,Cookies,420,331,234
+9,"Cheese Crackers, Breadsticks & Dipping",414,365,260
+9,Chocolate & Sweet Spreads,74,73,63
+9,"Toffee, Fudge & Nougat",26,20,19
+10,Crisp & Snacks,2508,1723,915
+10,Chocolate,1802,1064,645
+10,Other Confectionary,993,613,421
+10,Cookies,502,393,277
+10,"Cheese Crackers, Breadsticks & Dipping",486,400,299
+10,Chocolate & Sweet Spreads,98,98,71
+10,"Toffee, Fudge & Nougat",47,24,20
+11,Crisp & Snacks,2781,1992,1015
+11,Chocolate,1897,1188,714
+11,Other Confectionary,1224,774,505
+11,"Cheese Crackers, Breadsticks & Dipping",552,449,325
+11,Cookies,513,412,281
+11,Chocolate & Sweet Spreads,65,64,53
+11,"Toffee, Fudge & Nougat",40,25,23
+12,Crisp & Snacks,3212,2284,1106
+12,Chocolate,2378,1443,807
+12,Other Confectionary,1418,896,558
+12,"Cheese Crackers, Breadsticks & Dipping",609,514,367
+12,Cookies,570,470,321
+12,Chocolate & Sweet Spreads,49,47,38
+12,"Toffee, Fudge & Nougat",37,30,27
+13,Crisp & Snacks,4011,2938,1277
+13,Chocolate,2868,1749,888
+13,Other Confectionary,1616,982,594
+13,"Cheese Crackers, Breadsticks & Dipping",768,655,463
+13,Cookies,589,486,317
+13,Chocolate & Sweet Spreads,78,76,59
+13,"Toffee, Fudge & Nougat",65,43,33
+14,Crisp & Snacks,4924,3616,1392
+14,Chocolate,3602,2114,992
+14,Other Confectionary,1737,1199,680
+14,"Cheese Crackers, Breadsticks & Dipping",1022,849,551
+14,Cookies,806,637,397
+14,Chocolate & Sweet Spreads,85,78,65
+14,"Toffee, Fudge & Nougat",67,47,34
+15,Crisp & Snacks,6325,4633,1527
+15,Chocolate,4212,2614,1125
+15,Other Confectionary,2293,1498,819
+15,"Cheese Crackers, Breadsticks & Dipping",1396,1173,709
+15,Cookies,741,632,410
+15,Chocolate & Sweet Spreads,121,119,90
+15,"Toffee, Fudge & Nougat",86,52,41
+16,Crisp & Snacks,7563,5509,1660
+16,Chocolate,5000,3186,1292
+16,Other Confectionary,2833,1826,929
+16,"Cheese Crackers, Breadsticks & Dipping",1780,1491,803
+16,Cookies,910,748,478
+16,"Toffee, Fudge & Nougat",119,67,45
+16,Chocolate & Sweet Spreads,109,107,84
+17,Crisp & Snacks,7292,5374,1613
+17,Chocolate,5126,3208,1287
+17,Other Confectionary,2798,1884,961
+17,"Cheese Crackers, Breadsticks & Dipping",1680,1388,779
+17,Cookies,936,778,487
+17,Chocolate & Sweet Spreads,133,127,92
+17,"Toffee, Fudge & Nougat",107,62,48
+18,Crisp & Snacks,6303,4688,1539
+18,Chocolate,4579,2873,1196
+18,Other Confectionary,2684,1801,932
+18,"Cheese Crackers, Breadsticks & Dipping",1259,1107,648
+18,Cookies,793,683,406
+18,Chocolate & Sweet Spreads,96,94,72
+18,"Toffee, Fudge & Nougat",83,60,43
+19,Crisp & Snacks,5338,3830,1358
+19,Chocolate,3902,2409,1057
+19,Other Confectionary,2386,1577,829
+19,"Cheese Crackers, Breadsticks & Dipping",1039,877,547
+19,Cookies,692,572,355
+19,"Toffee, Fudge & Nougat",81,58,49
+19,Chocolate & Sweet Spreads,77,75,56
+20,Crisp & Snacks,4595,3307,1233
+20,Chocolate,3349,2046,922
+20,Other Confectionary,2012,1248,636
+20,"Cheese Crackers, Breadsticks & Dipping",814,696,443
+20,Cookies,685,556,327
+20,Chocolate & Sweet Spreads,87,85,52
+20,"Toffee, Fudge & Nougat",39,28,21
+21,Crisp & Snacks,1616,1136,641
+21,Chocolate,1361,807,463
+21,Other Confectionary,565,384,263
+21,"Cheese Crackers, Breadsticks & Dipping",274,242,181
+21,Cookies,195,159,119
+21,Chocolate & Sweet Spreads,35,35,21
+21,"Toffee, Fudge & Nougat",18,10,9
+22,Crisp & Snacks,36,21,19
+22,Chocolate,31,23,18
+22,Other Confectionary,16,11,8
+22,"Cheese Crackers, Breadsticks & Dipping",7,5,4
+22,Cookies,3,3,1
+22,Chocolate & Sweet Spreads,2,2,1
+23,Crisp & Snacks,18,10,9
+23,Chocolate,17,5,4
+23,Other Confectionary,7,4,4
+23,Cookies,5,5,5
+23,"Cheese Crackers, Breadsticks & Dipping",4,3,3

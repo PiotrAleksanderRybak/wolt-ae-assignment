@@ -1,0 +1,24 @@
+Wolt Task 2 analysis outputs
+========================================
+
+00_purchase_overview: 1 rows
+01_item_overview: 1 rows
+02_monthly_business_overview: 12 rows
+10_category_annual_summary: 7 rows
+11_category_q1_vs_q4: 7 rows
+12_star_products: 60 rows
+13_product_q1_vs_q4_drivers: 61 rows
+20_product_pairs: 100 rows
+21_product_pairs_without_rapid_repeats: 100 rows
+30_category_monthly: 84 rows
+31_category_by_weekday: 49 rows
+32_category_by_hour: 157 rows
+40_first_purchase_promo_summary: 2 rows
+41_first_purchase_promo_monthly: 8 rows
+42_promo_products_on_first_purchase: 1 rows
+43_promo_types_on_first_purchase: 1 rows
+50_overall_rapid_repeat_sensitivity: 2 rows
+51_category_rapid_repeat_sensitivity: 7 rows
+52_product_rapid_repeat_sensitivity: 60 rows
+60_price_coverage_by_category: 7 rows
+61_price_coverage_top_products: 60 rows

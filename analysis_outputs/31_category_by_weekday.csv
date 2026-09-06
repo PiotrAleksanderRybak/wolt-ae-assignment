@@ -1,0 +1,50 @@
+WEEKDAY_NUMBER,WEEKDAY_NAME,ITEM_CATEGORY,UNITS,PURCHASES,CUSTOMERS
+1,Mon,Crisp & Snacks,7624,5404,1602
+1,Mon,Chocolate,5412,3229,1228
+1,Mon,Other Confectionary,3383,2116,1000
+1,Mon,"Cheese Crackers, Breadsticks & Dipping",1319,1096,628
+1,Mon,Cookies,1298,1064,566
+1,Mon,Chocolate & Sweet Spreads,172,169,117
+1,Mon,"Toffee, Fudge & Nougat",107,74,50
+2,Tue,Crisp & Snacks,12195,8498,1787
+2,Tue,Chocolate,5580,3382,1300
+2,Tue,Other Confectionary,3002,1914,925
+2,Tue,"Cheese Crackers, Breadsticks & Dipping",2648,2175,992
+2,Tue,Cookies,1249,997,577
+2,Tue,Chocolate & Sweet Spreads,164,160,119
+2,Tue,"Toffee, Fudge & Nougat",133,80,62
+3,Wed,Crisp & Snacks,12137,8819,1820
+3,Wed,Chocolate,5836,3451,1259
+3,Wed,Other Confectionary,3056,1980,949
+3,Wed,"Cheese Crackers, Breadsticks & Dipping",2759,2330,1092
+3,Wed,Cookies,1202,999,577
+3,Wed,Chocolate & Sweet Spreads,182,177,127
+3,Wed,"Toffee, Fudge & Nougat",109,82,59
+4,Thu,Crisp & Snacks,9730,7317,1735
+4,Thu,Chocolate,5821,3496,1329
+4,Thu,Other Confectionary,3316,2081,977
+4,Thu,"Cheese Crackers, Breadsticks & Dipping",2173,1881,940
+4,Thu,Cookies,1175,964,562
+4,Thu,Chocolate & Sweet Spreads,173,165,124
+4,Thu,"Toffee, Fudge & Nougat",120,76,61
+5,Fri,Chocolate,7658,4648,1467
+5,Fri,Crisp & Snacks,6744,4948,1543
+5,Fri,Other Confectionary,4083,2657,1092
+5,Fri,"Cheese Crackers, Breadsticks & Dipping",1356,1123,634
+5,Fri,Cookies,1317,1081,626
+5,Fri,Chocolate & Sweet Spreads,173,169,127
+5,Fri,"Toffee, Fudge & Nougat",103,73,55
+6,Sat,Chocolate,7887,4896,1528
+6,Sat,Crisp & Snacks,6583,4801,1528
+6,Sat,Other Confectionary,4230,2794,1158
+6,Sat,Cookies,1305,1112,622
+6,Sat,"Cheese Crackers, Breadsticks & Dipping",1270,1051,599
+6,Sat,Chocolate & Sweet Spreads,224,219,163
+6,Sat,"Toffee, Fudge & Nougat",121,72,56
+7,Sun,Crisp & Snacks,6831,5034,1537
+7,Sun,Chocolate,6453,4215,1426
+7,Sun,Other Confectionary,4034,2701,1131
+7,Sun,Cookies,1587,1267,674
+7,Sun,"Cheese Crackers, Breadsticks & Dipping",1234,1050,621
+7,Sun,Chocolate & Sweet Spreads,194,191,148
+7,Sun,"Toffee, Fudge & Nougat",166,103,71

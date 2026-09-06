@@ -1,0 +1,85 @@
+ORDER_MONTH,ITEM_CATEGORY,UNITS,PURCHASES,CUSTOMERS,PROMO_UNITS,PROMO_UNIT_SHARE_PCT
+2023-01-01,Crisp & Snacks,3514,2559,1105,51,1.45
+2023-01-01,Other Confectionary,2729,1743,855,16,0.59
+2023-01-01,Chocolate,1226,910,523,92,7.50
+2023-01-01,"Cheese Crackers, Breadsticks & Dipping",779,658,455,0,0.00
+2023-01-01,Cookies,386,333,226,0,0.00
+2023-01-01,Chocolate & Sweet Spreads,79,75,55,0,0.00
+2023-01-01,"Toffee, Fudge & Nougat",35,30,24,0,0.00
+2023-02-01,Crisp & Snacks,3812,2749,1129,35,0.92
+2023-02-01,Other Confectionary,2806,1846,881,1,0.04
+2023-02-01,Chocolate,1406,1032,553,26,1.85
+2023-02-01,"Cheese Crackers, Breadsticks & Dipping",739,614,407,25,3.38
+2023-02-01,Cookies,476,378,246,5,1.05
+2023-02-01,Chocolate & Sweet Spreads,88,88,63,1,1.14
+2023-02-01,"Toffee, Fudge & Nougat",43,34,25,0,0.00
+2023-03-01,Crisp & Snacks,5126,3725,1295,124,2.42
+2023-03-01,Other Confectionary,3712,2439,1033,0,0.00
+2023-03-01,Chocolate,1724,1295,655,45,2.61
+2023-03-01,"Cheese Crackers, Breadsticks & Dipping",1054,846,501,113,10.72
+2023-03-01,Cookies,654,550,339,14,2.14
+2023-03-01,Chocolate & Sweet Spreads,95,91,74,0,0.00
+2023-03-01,"Toffee, Fudge & Nougat",67,49,38,0,0.00
+2023-04-01,Crisp & Snacks,4697,3300,1264,23,0.49
+2023-04-01,Other Confectionary,3219,2079,942,0,0.00
+2023-04-01,Chocolate,1372,997,536,47,3.43
+2023-04-01,"Cheese Crackers, Breadsticks & Dipping",897,738,488,123,13.71
+2023-04-01,Cookies,582,466,315,0,0.00
+2023-04-01,Chocolate & Sweet Spreads,105,100,74,7,6.67
+2023-04-01,"Toffee, Fudge & Nougat",68,45,28,0,0.00
+2023-05-01,Crisp & Snacks,5304,3771,1344,71,1.34
+2023-05-01,Other Confectionary,3368,2172,955,1,0.03
+2023-05-01,Chocolate,1276,957,498,47,3.68
+2023-05-01,"Cheese Crackers, Breadsticks & Dipping",980,827,506,5,0.51
+2023-05-01,Cookies,623,523,343,10,1.61
+2023-05-01,Chocolate & Sweet Spreads,77,77,60,3,3.90
+2023-05-01,"Toffee, Fudge & Nougat",52,47,26,0,0.00
+2023-06-01,Crisp & Snacks,4040,3024,1264,33,0.82
+2023-06-01,Other Confectionary,3396,2226,1030,0,0.00
+2023-06-01,Chocolate,1106,823,476,78,7.05
+2023-06-01,"Cheese Crackers, Breadsticks & Dipping",956,806,489,28,2.93
+2023-06-01,Cookies,764,649,368,5,0.65
+2023-06-01,Chocolate & Sweet Spreads,92,92,68,4,4.35
+2023-06-01,"Toffee, Fudge & Nougat",37,27,23,1,2.70
+2023-07-01,Crisp & Snacks,4442,3280,1277,114,2.57
+2023-07-01,Other Confectionary,3510,2249,975,28,0.80
+2023-07-01,Chocolate,1339,985,530,50,3.73
+2023-07-01,"Cheese Crackers, Breadsticks & Dipping",898,750,479,0,0.00
+2023-07-01,Cookies,763,638,353,25,3.28
+2023-07-01,Chocolate & Sweet Spreads,92,90,72,9,9.78
+2023-07-01,"Toffee, Fudge & Nougat",51,33,24,3,5.88
+2023-08-01,Crisp & Snacks,5367,3971,1394,604,11.25
+2023-08-01,Chocolate,4907,3097,1176,72,1.47
+2023-08-01,"Cheese Crackers, Breadsticks & Dipping",1219,1045,599,0,0.00
+2023-08-01,Other Confectionary,1024,670,447,0,0.00
+2023-08-01,Cookies,871,703,415,56,6.43
+2023-08-01,"Toffee, Fudge & Nougat",126,48,33,0,0.00
+2023-08-01,Chocolate & Sweet Spreads,108,105,79,0,0.00
+2023-09-01,Chocolate,7390,4511,1379,1157,15.66
+2023-09-01,Crisp & Snacks,5924,4425,1461,811,13.69
+2023-09-01,"Cheese Crackers, Breadsticks & Dipping",1266,1067,597,36,2.84
+2023-09-01,Cookies,1043,835,454,47,4.51
+2023-09-01,Other Confectionary,265,157,102,0,0.00
+2023-09-01,Chocolate & Sweet Spreads,126,122,90,1,0.79
+2023-09-01,"Toffee, Fudge & Nougat",118,70,43,0,0.00
+2023-10-01,Chocolate,8065,4450,1449,2044,25.34
+2023-10-01,Crisp & Snacks,6727,5018,1559,972,14.45
+2023-10-01,"Cheese Crackers, Breadsticks & Dipping",1374,1175,667,0,0.00
+2023-10-01,Cookies,1075,875,489,29,2.70
+2023-10-01,Other Confectionary,317,207,153,12,3.79
+2023-10-01,Chocolate & Sweet Spreads,143,142,101,0,0.00
+2023-10-01,"Toffee, Fudge & Nougat",95,66,45,0,0.00
+2023-11-01,Chocolate,7989,4198,1421,134,1.68
+2023-11-01,Crisp & Snacks,6328,4327,1510,1165,18.41
+2023-11-01,"Cheese Crackers, Breadsticks & Dipping",1313,1102,689,40,3.05
+2023-11-01,Cookies,939,781,460,56,5.96
+2023-11-01,Other Confectionary,411,236,144,0,0.00
+2023-11-01,Chocolate & Sweet Spreads,167,166,115,0,0.00
+2023-11-01,"Toffee, Fudge & Nougat",72,48,29,0,0.00
+2023-12-01,Chocolate,6847,4062,1411,71,1.04
+2023-12-01,Crisp & Snacks,6563,4672,1558,384,5.85
+2023-12-01,"Cheese Crackers, Breadsticks & Dipping",1284,1078,649,0,0.00
+2023-12-01,Cookies,957,753,432,37,3.87
+2023-12-01,Other Confectionary,347,219,129,33,9.51
+2023-12-01,Chocolate & Sweet Spreads,110,102,72,9,8.18
+2023-12-01,"Toffee, Fudge & Nougat",95,63,51,0,0.00

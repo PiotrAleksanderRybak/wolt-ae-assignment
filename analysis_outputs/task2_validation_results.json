@@ -1,0 +1,613 @@
+{
+  "01_stable_category_q1_vs_q4": [
+    {
+      "ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 13230.0,
+      "Q4_UNITS": 22901.0,
+      "Q1_PURCHASES": 8045,
+      "Q4_PURCHASES": 12710,
+      "Q1_CUSTOMERS": 1618,
+      "Q4_CUSTOMERS": 1892,
+      "Q1_PROMO_UNITS": 163.0,
+      "Q4_PROMO_UNITS": 2249.0,
+      "UNITS_ABSOLUTE_CHANGE": 9671.0,
+      "UNITS_CHANGE_PCT": 73.1,
+      "Q1_PROMO_UNIT_SHARE_PCT": 1.23,
+      "Q4_PROMO_UNIT_SHARE_PCT": 9.82
+    },
+    {
+      "ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 12452.0,
+      "Q4_UNITS": 19618.0,
+      "Q1_PURCHASES": 9033,
+      "Q4_PURCHASES": 14017,
+      "Q1_CUSTOMERS": 1716,
+      "Q4_CUSTOMERS": 1944,
+      "Q1_PROMO_UNITS": 210.0,
+      "Q4_PROMO_UNITS": 2521.0,
+      "UNITS_ABSOLUTE_CHANGE": 7166.0,
+      "UNITS_CHANGE_PCT": 57.55,
+      "Q1_PROMO_UNIT_SHARE_PCT": 1.69,
+      "Q4_PROMO_UNIT_SHARE_PCT": 12.85
+    },
+    {
+      "ITEM_CATEGORY": "Cheese Crackers, Breadsticks & Dipping",
+      "Q1_UNITS": 2572.0,
+      "Q4_UNITS": 3971.0,
+      "Q1_PURCHASES": 2118,
+      "Q4_PURCHASES": 3355,
+      "Q1_CUSTOMERS": 920,
+      "Q4_CUSTOMERS": 1271,
+      "Q1_PROMO_UNITS": 138.0,
+      "Q4_PROMO_UNITS": 40.0,
+      "UNITS_ABSOLUTE_CHANGE": 1399.0,
+      "UNITS_CHANGE_PCT": 54.39,
+      "Q1_PROMO_UNIT_SHARE_PCT": 5.37,
+      "Q4_PROMO_UNIT_SHARE_PCT": 1.01
+    },
+    {
+      "ITEM_CATEGORY": "Cookies",
+      "Q1_UNITS": 1516.0,
+      "Q4_UNITS": 2971.0,
+      "Q1_PURCHASES": 1261,
+      "Q4_PURCHASES": 2409,
+      "Q1_CUSTOMERS": 601,
+      "Q4_CUSTOMERS": 953,
+      "Q1_PROMO_UNITS": 19.0,
+      "Q4_PROMO_UNITS": 122.0,
+      "UNITS_ABSOLUTE_CHANGE": 1455.0,
+      "UNITS_CHANGE_PCT": 95.98,
+      "Q1_PROMO_UNIT_SHARE_PCT": 1.25,
+      "Q4_PROMO_UNIT_SHARE_PCT": 4.11
+    },
+    {
+      "ITEM_CATEGORY": "Other Confectionary",
+      "Q1_UNITS": 373.0,
+      "Q4_UNITS": 1075.0,
+      "Q1_PURCHASES": 272,
+      "Q4_PURCHASES": 662,
+      "Q1_CUSTOMERS": 163,
+      "Q4_CUSTOMERS": 341,
+      "Q1_PROMO_UNITS": 17.0,
+      "Q4_PROMO_UNITS": 45.0,
+      "UNITS_ABSOLUTE_CHANGE": 702.0,
+      "UNITS_CHANGE_PCT": 188.2,
+      "Q1_PROMO_UNIT_SHARE_PCT": 4.56,
+      "Q4_PROMO_UNIT_SHARE_PCT": 4.19
+    },
+    {
+      "ITEM_CATEGORY": "Chocolate & Sweet Spreads",
+      "Q1_UNITS": 262.0,
+      "Q4_UNITS": 420.0,
+      "Q1_PURCHASES": 254,
+      "Q4_PURCHASES": 410,
+      "Q1_CUSTOMERS": 159,
+      "Q4_CUSTOMERS": 238,
+      "Q1_PROMO_UNITS": 1.0,
+      "Q4_PROMO_UNITS": 9.0,
+      "UNITS_ABSOLUTE_CHANGE": 158.0,
+      "UNITS_CHANGE_PCT": 60.31,
+      "Q1_PROMO_UNIT_SHARE_PCT": 0.38,
+      "Q4_PROMO_UNIT_SHARE_PCT": 2.14
+    },
+    {
+      "ITEM_CATEGORY": "Toffee, Fudge & Nougat",
+      "Q1_UNITS": 145.0,
+      "Q4_UNITS": 262.0,
+      "Q1_PURCHASES": 113,
+      "Q4_PURCHASES": 177,
+      "Q1_CUSTOMERS": 79,
+      "Q4_CUSTOMERS": 107,
+      "Q1_PROMO_UNITS": 0.0,
+      "Q4_PROMO_UNITS": 0.0,
+      "UNITS_ABSOLUTE_CHANGE": 117.0,
+      "UNITS_CHANGE_PCT": 80.69,
+      "Q1_PROMO_UNIT_SHARE_PCT": 0.0,
+      "Q4_PROMO_UNIT_SHARE_PCT": 0.0
+    }
+  ],
+  "02_stable_product_q1_vs_q4": [
+    {
+      "ITEM_KEY": "7aef490acb1ca55f113afe02977b9e8f",
+      "ITEM_NAME": "Tony’s Chocolonely Dark Milk Brownie Chocolate, 180 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 8874.0,
+      "Q4_UNITS": 15968.0,
+      "UNITS_ABSOLUTE_CHANGE": 7094.0
+    },
+    {
+      "ITEM_KEY": "e9c4aa9e65917445495602a4adc16675",
+      "ITEM_NAME": "Funny-Frisch Kettle Chips Sweet Chilli & Red Pepper, 120 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 8483.0,
+      "Q4_UNITS": 13033.0,
+      "UNITS_ABSOLUTE_CHANGE": 4550.0
+    },
+    {
+      "ITEM_KEY": "2f605027e796b8c1d897c6100903c6d7",
+      "ITEM_NAME": "Fuego salsa dip, mild, 200 ml",
+      "CURRENT_ITEM_CATEGORY": "Cheese Crackers, Breadsticks & Dipping",
+      "Q1_UNITS": 1597.0,
+      "Q4_UNITS": 2498.0,
+      "UNITS_ABSOLUTE_CHANGE": 901.0
+    },
+    {
+      "ITEM_KEY": "7581487f9a0d33775d570f020b0e4141",
+      "ITEM_NAME": "Yogurette Strawberry Yogurt Chocolate, 100 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 433.0,
+      "Q4_UNITS": 1275.0,
+      "UNITS_ABSOLUTE_CHANGE": 842.0
+    },
+    {
+      "ITEM_KEY": "a5e0be3a6e03f5ca59260103e58835d2",
+      "ITEM_NAME": "Lay's Salt & Vinegar Crisps, 150 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 350.0,
+      "Q4_UNITS": 754.0,
+      "UNITS_ABSOLUTE_CHANGE": 404.0
+    },
+    {
+      "ITEM_KEY": "0057c74ea984d23e711ccc0c0d224e5a",
+      "ITEM_NAME": "Doritos Cheese Nachos, 110 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 297.0,
+      "Q4_UNITS": 696.0,
+      "UNITS_ABSOLUTE_CHANGE": 399.0
+    },
+    {
+      "ITEM_KEY": "edb0f4aa63864fc9a85372d15cb65440",
+      "ITEM_NAME": "Ja! Cookies American Style Chocolate Chip 225 g",
+      "CURRENT_ITEM_CATEGORY": "Cookies",
+      "Q1_UNITS": 244.0,
+      "Q4_UNITS": 600.0,
+      "UNITS_ABSOLUTE_CHANGE": 356.0
+    },
+    {
+      "ITEM_KEY": "971c3d87aff5615604a3d1ef052d8cd9",
+      "ITEM_NAME": "Chio Dip Hot Cheese, 200 ml",
+      "CURRENT_ITEM_CATEGORY": "Cheese Crackers, Breadsticks & Dipping",
+      "Q1_UNITS": 368.0,
+      "Q4_UNITS": 701.0,
+      "UNITS_ABSOLUTE_CHANGE": 333.0
+    },
+    {
+      "ITEM_KEY": "9457e16e60a76e40ad486d39b0c4a8b1",
+      "ITEM_NAME": "Frigeo Crispy Puffed Rice, 80 g",
+      "CURRENT_ITEM_CATEGORY": "Other Confectionary",
+      "Q1_UNITS": 0.0,
+      "Q4_UNITS": 301.0,
+      "UNITS_ABSOLUTE_CHANGE": 301.0
+    },
+    {
+      "ITEM_KEY": "0aec6d843c7bd4fd176e7f6376dfb0c8",
+      "ITEM_NAME": "Funny-Frisch Riffels Natural, 150 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 288.0,
+      "Q4_UNITS": 584.0,
+      "UNITS_ABSOLUTE_CHANGE": 296.0
+    },
+    {
+      "ITEM_KEY": "bb8ba8e0cacb02d3fecb8478cf1be85c",
+      "ITEM_NAME": "Reese’s Peanut Butter Cup Minis, 90 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 164.0,
+      "Q4_UNITS": 457.0,
+      "UNITS_ABSOLUTE_CHANGE": 293.0
+    },
+    {
+      "ITEM_KEY": "92d78ca20860dd50a1748fe2b0c8dc78",
+      "ITEM_NAME": "Storck Mini Dickmann’s Chocolate Trio, (24 units), 200 g",
+      "CURRENT_ITEM_CATEGORY": "Other Confectionary",
+      "Q1_UNITS": 238.0,
+      "Q4_UNITS": 513.0,
+      "UNITS_ABSOLUTE_CHANGE": 275.0
+    },
+    {
+      "ITEM_KEY": "514473c47399dfac41b754ddf7fd5d94",
+      "ITEM_NAME": "Funny-Frisch Lentil Crisps Paprika Style, 90 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 269.0,
+      "Q4_UNITS": 532.0,
+      "UNITS_ABSOLUTE_CHANGE": 263.0
+    },
+    {
+      "ITEM_KEY": "1d3842663f6e6e8ab20a245bc43b72a0",
+      "ITEM_NAME": "Knoppers Crispy Wafer, (8x25 g), 200 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 184.0,
+      "Q4_UNITS": 442.0,
+      "UNITS_ABSOLUTE_CHANGE": 258.0
+    },
+    {
+      "ITEM_KEY": "782c2fdec7b604daefea9bf7b783a7bb",
+      "ITEM_NAME": "Crunchips Western Style Potato Chips 150 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 237.0,
+      "Q4_UNITS": 478.0,
+      "UNITS_ABSOLUTE_CHANGE": 241.0
+    },
+    {
+      "ITEM_KEY": "de2d83ff88ef56053a06b1e8686c5577",
+      "ITEM_NAME": "Alnavit Chocolate Cookies, 125 g",
+      "CURRENT_ITEM_CATEGORY": "Cookies",
+      "Q1_UNITS": 220.0,
+      "Q4_UNITS": 450.0,
+      "UNITS_ABSOLUTE_CHANGE": 230.0
+    },
+    {
+      "ITEM_KEY": "d3ed3888a55bdc5f34aacbf9877850e1",
+      "ITEM_NAME": "Tony’s Chocolonely Milk Chocolate, 32%, 180 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 141.0,
+      "Q4_UNITS": 371.0,
+      "UNITS_ABSOLUTE_CHANGE": 230.0
+    },
+    {
+      "ITEM_KEY": "61d7a42ecec8482529b308f32ff598b1",
+      "ITEM_NAME": "Hanuta Hazelnut Slice, (10x22 g), 220 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 209.0,
+      "Q4_UNITS": 436.0,
+      "UNITS_ABSOLUTE_CHANGE": 227.0
+    },
+    {
+      "ITEM_KEY": "9b6c1ac419e38739c6276dcdb788bdcf",
+      "ITEM_NAME": "Funny-Frisch Kettle Chips Salt & Vinegar, 120 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 351.0,
+      "Q4_UNITS": 538.0,
+      "UNITS_ABSOLUTE_CHANGE": 187.0
+    },
+    {
+      "ITEM_KEY": "8daf7c8493c249f143d4d72205f12405",
+      "ITEM_NAME": "Nippon Häppchen puffed rice with milk chocolate, 200 g",
+      "CURRENT_ITEM_CATEGORY": "Cookies",
+      "Q1_UNITS": 168.0,
+      "Q4_UNITS": 353.0,
+      "UNITS_ABSOLUTE_CHANGE": 185.0
+    },
+    {
+      "ITEM_KEY": "03b69ef76960b93651906fa51bb5d44c",
+      "ITEM_NAME": "Cadbury Milk Caramel Chocolate, 180 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 257.0,
+      "Q4_UNITS": 430.0,
+      "UNITS_ABSOLUTE_CHANGE": 173.0
+    },
+    {
+      "ITEM_KEY": "b9c5d856f0380ca92e558a81c1a0c686",
+      "ITEM_NAME": "Ritter Sport Honey-Salt-Almond Chocolate, 100 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 255.0,
+      "Q4_UNITS": 416.0,
+      "UNITS_ABSOLUTE_CHANGE": 161.0
+    },
+    {
+      "ITEM_KEY": "2247902fe615e4ad16d53af0070362da",
+      "ITEM_NAME": "Ritter Sport Nut Class Whole Nut Chocolate, 100 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 253.0,
+      "Q4_UNITS": 412.0,
+      "UNITS_ABSOLUTE_CHANGE": 159.0
+    },
+    {
+      "ITEM_KEY": "dcc2ec0c38ed411a5d9295751328a464",
+      "ITEM_NAME": "Pringles Sour Cream & Onion Chips, 165 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 303.0,
+      "Q4_UNITS": 440.0,
+      "UNITS_ABSOLUTE_CHANGE": 137.0
+    },
+    {
+      "ITEM_KEY": "898f47cb5c754158245b1b236d3df7e6",
+      "ITEM_NAME": "Fuego guacamole dip, 200 ml",
+      "CURRENT_ITEM_CATEGORY": "Cheese Crackers, Breadsticks & Dipping",
+      "Q1_UNITS": 282.0,
+      "Q4_UNITS": 419.0,
+      "UNITS_ABSOLUTE_CHANGE": 137.0
+    },
+    {
+      "ITEM_KEY": "1b2aa51424dae1f208c314d58ae8e180",
+      "ITEM_NAME": "Milka Schokolade Cookie Sensations Oreo Creme, 156 g",
+      "CURRENT_ITEM_CATEGORY": "Cookies",
+      "Q1_UNITS": 146.0,
+      "Q4_UNITS": 282.0,
+      "UNITS_ABSOLUTE_CHANGE": 136.0
+    },
+    {
+      "ITEM_KEY": "e98605036c98cd2c57d3eaf01e1c49ad",
+      "ITEM_NAME": "Ritter Sport Chocolate Wafer, 100 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 519.0,
+      "Q4_UNITS": 384.0,
+      "UNITS_ABSOLUTE_CHANGE": -135.0
+    },
+    {
+      "ITEM_KEY": "d3dffe73c943311024ef5b4b71e3f598",
+      "ITEM_NAME": "Lay's Crips herb butter flavour, 150 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 379.0,
+      "Q4_UNITS": 509.0,
+      "UNITS_ABSOLUTE_CHANGE": 130.0
+    },
+    {
+      "ITEM_KEY": "184794567e769594406f10b6826d88e4",
+      "ITEM_NAME": "Griesson Soft Cake biscuits, orange milk, 300 g",
+      "CURRENT_ITEM_CATEGORY": "Cookies",
+      "Q1_UNITS": 98.0,
+      "Q4_UNITS": 223.0,
+      "UNITS_ABSOLUTE_CHANGE": 125.0
+    },
+    {
+      "ITEM_KEY": "13fe423f6a47156a00beee842eafc061",
+      "ITEM_NAME": "Lorenz Naturals Rosemary Crisps, 95 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 376.0,
+      "Q4_UNITS": 500.0,
+      "UNITS_ABSOLUTE_CHANGE": 124.0
+    },
+    {
+      "ITEM_KEY": "0e706671fbc1c66c6276653846b1c1ac",
+      "ITEM_NAME": "Ferrero Kinder Country Chocolate Bar, (9x23,5 g), 211,5 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 594.0,
+      "Q4_UNITS": 712.0,
+      "UNITS_ABSOLUTE_CHANGE": 118.0
+    },
+    {
+      "ITEM_KEY": "564b722b1d92225859390ea030ddd983",
+      "ITEM_NAME": "Ferrero Kinder Bueno White Chocolate Bar, (6x19,5 g), 117 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 348.0,
+      "Q4_UNITS": 458.0,
+      "UNITS_ABSOLUTE_CHANGE": 110.0
+    },
+    {
+      "ITEM_KEY": "c8311a116507e87271bd16fb898a5164",
+      "ITEM_NAME": "Veganz Lemon Cookie, Organic, 150 g",
+      "CURRENT_ITEM_CATEGORY": "Cookies",
+      "Q1_UNITS": 147.0,
+      "Q4_UNITS": 256.0,
+      "UNITS_ABSOLUTE_CHANGE": 109.0
+    },
+    {
+      "ITEM_KEY": "32fb026b53f98d91ba7d1221358ee3ac",
+      "ITEM_NAME": "Griesson Soft Cake biscuits, cherry, 300 g",
+      "CURRENT_ITEM_CATEGORY": "Cookies",
+      "Q1_UNITS": 61.0,
+      "Q4_UNITS": 164.0,
+      "UNITS_ABSOLUTE_CHANGE": 103.0
+    },
+    {
+      "ITEM_KEY": "2b8d65b915a044b3570fd7f8a3a7d065",
+      "ITEM_NAME": "Pom-Bär Original, 75 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 216.0,
+      "Q4_UNITS": 316.0,
+      "UNITS_ABSOLUTE_CHANGE": 100.0
+    },
+    {
+      "ITEM_KEY": "07416ecd652da9d161c5113764ce6f90",
+      "ITEM_NAME": "Takis Fuego, 100 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 252.0,
+      "Q4_UNITS": 351.0,
+      "UNITS_ABSOLUTE_CHANGE": 99.0
+    },
+    {
+      "ITEM_KEY": "64f36aa14d1921b5f20921a6fb8b8bc0",
+      "ITEM_NAME": "Chio Tortillas Original Salted, 110 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 343.0,
+      "Q4_UNITS": 440.0,
+      "UNITS_ABSOLUTE_CHANGE": 97.0
+    },
+    {
+      "ITEM_KEY": "321127a76333fb0eceef367e946ce2cb",
+      "ITEM_NAME": "Kinder Hippo Haselnuss, 5 Stück",
+      "CURRENT_ITEM_CATEGORY": "Cookies",
+      "Q1_UNITS": 176.0,
+      "Q4_UNITS": 271.0,
+      "UNITS_ABSOLUTE_CHANGE": 95.0
+    },
+    {
+      "ITEM_KEY": "5d3969ae02b82a2e1f84457d03fedcab",
+      "ITEM_NAME": "Ferrero Kinder Riegel Chocolate Bar, (18x21 g), 378 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 309.0,
+      "Q4_UNITS": 391.0,
+      "UNITS_ABSOLUTE_CHANGE": 82.0
+    },
+    {
+      "ITEM_KEY": "f0dfa363e993b8632fc5bb35648ca825",
+      "ITEM_NAME": "Ferrero Nutella Nut Nougat Cream, 450 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate & Sweet Spreads",
+      "Q1_UNITS": 123.0,
+      "Q4_UNITS": 204.0,
+      "UNITS_ABSOLUTE_CHANGE": 81.0
+    },
+    {
+      "ITEM_KEY": "97cf2b65eb7bffb35913eaa9234cef6e",
+      "ITEM_NAME": "Storck Dickmann’s Schoko Strolche Chocolate Kisses, (10 units), 83 g",
+      "CURRENT_ITEM_CATEGORY": "Other Confectionary",
+      "Q1_UNITS": 22.0,
+      "Q4_UNITS": 94.0,
+      "UNITS_ABSOLUTE_CHANGE": 72.0
+    },
+    {
+      "ITEM_KEY": "e2c5b07e1f589fe7597d6f7318ea1838",
+      "ITEM_NAME": "Griesson Soft Cake Orange, 300 g",
+      "CURRENT_ITEM_CATEGORY": "Cookies",
+      "Q1_UNITS": 142.0,
+      "Q4_UNITS": 206.0,
+      "UNITS_ABSOLUTE_CHANGE": 64.0
+    },
+    {
+      "ITEM_KEY": "097ec47745d7c29c58ec58ff30db2c35",
+      "ITEM_NAME": "Lay's Crisps Salted, 150 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 0.0,
+      "Q4_UNITS": 63.0,
+      "UNITS_ABSOLUTE_CHANGE": 63.0
+    },
+    {
+      "ITEM_KEY": "8848e81faf793f35004c01e760863f14",
+      "ITEM_NAME": "Giotto Hazelnut Pastry, (4 bars), 154 g",
+      "CURRENT_ITEM_CATEGORY": "Toffee, Fudge & Nougat",
+      "Q1_UNITS": 56.0,
+      "Q4_UNITS": 111.0,
+      "UNITS_ABSOLUTE_CHANGE": 55.0
+    },
+    {
+      "ITEM_KEY": "40604bd20ff58f587f4849ea3a6673ac",
+      "ITEM_NAME": "Veganz Chocolate Cookie, Organic, 150 g",
+      "CURRENT_ITEM_CATEGORY": "Cookies",
+      "Q1_UNITS": 114.0,
+      "Q4_UNITS": 166.0,
+      "UNITS_ABSOLUTE_CHANGE": 52.0
+    },
+    {
+      "ITEM_KEY": "7576ff6ee76ca4dfc28bf4fbaaf08465",
+      "ITEM_NAME": "Ferrero Kinder Riegel Chocolate Bar, (10x21 g), 210 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 417.0,
+      "Q4_UNITS": 465.0,
+      "UNITS_ABSOLUTE_CHANGE": 48.0
+    },
+    {
+      "ITEM_KEY": "b9ed451639de565e319543836d6bb64c",
+      "ITEM_NAME": "Storck Super Dickmann’s Chocolate Kisses, (9x30 g), 270 g",
+      "CURRENT_ITEM_CATEGORY": "Other Confectionary",
+      "Q1_UNITS": 108.0,
+      "Q4_UNITS": 154.0,
+      "UNITS_ABSOLUTE_CHANGE": 46.0
+    },
+    {
+      "ITEM_KEY": "1d9d7fc4e965863acf0b3ad8ff8b3074",
+      "ITEM_NAME": "Lisa's organic kettle chips sour cream & onion, 125 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 0.0,
+      "Q4_UNITS": 40.0,
+      "UNITS_ABSOLUTE_CHANGE": 40.0
+    },
+    {
+      "ITEM_KEY": "2894f60b88078fb5b58fbf8dab0dbc63",
+      "ITEM_NAME": "Ferrero Nutella & Go, 52 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate & Sweet Spreads",
+      "Q1_UNITS": 38.0,
+      "Q4_UNITS": 78.0,
+      "UNITS_ABSOLUTE_CHANGE": 40.0
+    },
+    {
+      "ITEM_KEY": "5dcef824f2fd5224744a86e4c7dd250d",
+      "ITEM_NAME": "Crunchips Cheese & Onion Crisps, 150 g",
+      "CURRENT_ITEM_CATEGORY": "Crisp & Snacks",
+      "Q1_UNITS": 308.0,
+      "Q4_UNITS": 344.0,
+      "UNITS_ABSOLUTE_CHANGE": 36.0
+    },
+    {
+      "ITEM_KEY": "4cd94f965eb1982fdce03d81699b0838",
+      "ITEM_NAME": "Storck Toffifee Caramel-Hazelnut Chocolates, (15 units), 125 g",
+      "CURRENT_ITEM_CATEGORY": "Toffee, Fudge & Nougat",
+      "Q1_UNITS": 0.0,
+      "Q4_UNITS": 32.0,
+      "UNITS_ABSOLUTE_CHANGE": 32.0
+    },
+    {
+      "ITEM_KEY": "ec3986f69034113171d2dd2bac845401",
+      "ITEM_NAME": "Fuego salsa dip, hot, 200 ml",
+      "CURRENT_ITEM_CATEGORY": "Cheese Crackers, Breadsticks & Dipping",
+      "Q1_UNITS": 325.0,
+      "Q4_UNITS": 353.0,
+      "UNITS_ABSOLUTE_CHANGE": 28.0
+    },
+    {
+      "ITEM_KEY": "eb53c87b1ee83c0586a633daab87837f",
+      "ITEM_NAME": "Ferrero Kinder Bueno Chocolate Bar, (10x21,5 g), 215 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 0.0,
+      "Q4_UNITS": 27.0,
+      "UNITS_ABSOLUTE_CHANGE": 27.0
+    },
+    {
+      "ITEM_KEY": "c8985169d2c82050e3f8ef7f73451c8d",
+      "ITEM_NAME": "Storck Riesen Chocolate Toffees, 231 g",
+      "CURRENT_ITEM_CATEGORY": "Toffee, Fudge & Nougat",
+      "Q1_UNITS": 57.0,
+      "Q4_UNITS": 79.0,
+      "UNITS_ABSOLUTE_CHANGE": 22.0
+    },
+    {
+      "ITEM_KEY": "cfda38a00b0aed7f3d0f2dc905553c83",
+      "ITEM_NAME": "Rapunzel Bionella Vegan Organic Nut Nougat Cream, 400 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate & Sweet Spreads",
+      "Q1_UNITS": 6.0,
+      "Q4_UNITS": 24.0,
+      "UNITS_ABSOLUTE_CHANGE": 18.0
+    },
+    {
+      "ITEM_KEY": "4b8838c232ef24c3c33b0dcad972b672",
+      "ITEM_NAME": "Ritter Sport Chocolate White Whole Nut, 100 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate",
+      "Q1_UNITS": 273.0,
+      "Q4_UNITS": 257.0,
+      "UNITS_ABSOLUTE_CHANGE": -16.0
+    },
+    {
+      "ITEM_KEY": "008400fe0a12cc313b1b998c107cafea",
+      "ITEM_NAME": "Foodspring Protein Cream Hazelnut 200 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate & Sweet Spreads",
+      "Q1_UNITS": 3.0,
+      "Q4_UNITS": 15.0,
+      "UNITS_ABSOLUTE_CHANGE": 12.0
+    },
+    {
+      "ITEM_KEY": "9f8bd236cf455c9fa6a5fb11146b9368",
+      "ITEM_NAME": "Muh Muhs Original cream toffee, 215 g",
+      "CURRENT_ITEM_CATEGORY": "Toffee, Fudge & Nougat",
+      "Q1_UNITS": 32.0,
+      "Q4_UNITS": 40.0,
+      "UNITS_ABSOLUTE_CHANGE": 8.0
+    },
+    {
+      "ITEM_KEY": "6bbc265b0d9702985b61186ef2cec617",
+      "ITEM_NAME": "Nestlé Choco Crossies Crunchy Balls Milk Chocolate, 200 g",
+      "CURRENT_ITEM_CATEGORY": "Other Confectionary",
+      "Q1_UNITS": 5.0,
+      "Q4_UNITS": 13.0,
+      "UNITS_ABSOLUTE_CHANGE": 8.0
+    },
+    {
+      "ITEM_KEY": "b920b20ae65b43819f8696b2a6efcb21",
+      "ITEM_NAME": "Ferrero Nutella Nut Nougat Cream, 750 g",
+      "CURRENT_ITEM_CATEGORY": "Chocolate & Sweet Spreads",
+      "Q1_UNITS": 92.0,
+      "Q4_UNITS": 99.0,
+      "UNITS_ABSOLUTE_CHANGE": 7.0
+    }
+  ],
+  "03_first_observed_vs_2022_history": [
+    {
+      "PRIOR_HISTORY_STATUS": "not_observed_in_available_2022_history",
+      "CUSTOMERS": 1534,
+      "CUSTOMERS_WITH_PROMO_FIRST_2023_PURCHASE": 37,
+      "PROMO_SHARE_PCT": 2.41
+    },
+    {
+      "PRIOR_HISTORY_STATUS": "observed_in_available_2022_history",
+      "CUSTOMERS": 467,
+      "CUSTOMERS_WITH_PROMO_FIRST_2023_PURCHASE": 7,
+      "PROMO_SHARE_PCT": 1.5
+    }
+  ],
+  "04_available_2022_history": [
+    {
+      "PURCHASES": 667,
+      "CUSTOMERS": 467,
+      "FIRST_TIMESTAMP": "2022-12-25T08:11:53.152",
+      "LAST_TIMESTAMP": "2022-12-31T21:21:21.794"
+    }
+  ]
+}
